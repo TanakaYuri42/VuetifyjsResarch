@@ -46,6 +46,7 @@
     </v-toolbar>
     <v-content>
       <HelloWorld/>
+      <Test/>
     </v-content>
     <v-navigation-drawer
       temporary
@@ -71,11 +72,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import Test from './components/test'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Test
   },
   data () {
     return {
