@@ -1,34 +1,31 @@
 <template>
-  <v-app>
+  <v-container>
     <v-toolbar dark color="cyan lighten-3">
-      <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title class="white--text">Menu</v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <v-menu bottom left> 
-        <v-btn slot="activator" dark icon>
-          <v-icon>fas fa-list</v-icon>
-        </v-btn>
-      </v-menu>
+      <v-toolbar-title color="red">Vuetifyのcomponents紹介</v-toolbar-title>
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <!-- <HelloWorld/> -->
       <test/>
     </v-content>
 
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
+    <v-footer height="auto" color="grey darken-3" :fixed="fixed" app>
+      <v-layout row wrap>
+        <span>&copy; 2018</span>
+      </v-layout>
     </v-footer>
-  </v-app>
+  </v-container>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
-import Test from './components/test'
+import Test from './components/pages/test'
+import router from './components/router'
 
 export default {
   name: 'App',
+  router,
   components: {
     HelloWorld,
     Test
