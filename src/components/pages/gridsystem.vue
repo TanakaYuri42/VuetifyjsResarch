@@ -15,8 +15,14 @@
       </v-flex>
 
       <v-flex v-for="i in 3" :key="`4${i}`" xs4>
-        <v-card dark color="primary">
+        <v-card dark color="purple">
           <v-card-text class="px-0">&lt;v-flex xs4&gt;</v-card-text>
+        </v-card>
+      </v-flex>
+
+      <v-flex v-for="i in 2" :key="`6${i}`" xs12 md6>
+        <v-card dark  color="green">
+          <v-card-text class="px-0">&lt;v-flex xs12 md6&gt;</v-card-text>
         </v-card>
       </v-flex>
 
@@ -27,7 +33,7 @@
               上のように、v-flexのオプションに「画面サイズ+グリッド数」で設定する。<br>
               この画面サイズについては、公式サイトの
               <a href="https://vuetifyjs.com/ja/layout/breakpoints" target="_blank">Breakpoints</a>
-              も参照。
+              参照。
             </div>
           </v-card-text>
         </v-card>   
@@ -81,7 +87,17 @@ export default {
         {
           value: false,
           name: 'md',
-          text: "Medium。600px~960pxの画面サイズで、一部スマホやタブレットがこのくらい"
+          text: "Medium。960px~1264pxの画面サイズで、パソコンがこのくらい"
+        },
+        {
+          value: false,
+          name: 'lg',
+          text: "Large。1264px~1904pxの画面サイズで、大画面のパソコンがこのくらい"
+        },
+        {
+          value: false,
+          name: 'xl',
+          text: "Extra large。1904pxよりも大きい画面サイズで、大画面のテレビがこのくらい"
         },
       ],
     }

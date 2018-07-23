@@ -1,7 +1,7 @@
 <template>
   <v-container fluid grid-list-md>
 
-    <v-flex xs12 sm12 class="py-2">
+    <v-flex xs12 class="py-2">
       <h2>データの集合 | v-date-iterator</h2>   
       <v-divider></v-divider>
     </v-flex>

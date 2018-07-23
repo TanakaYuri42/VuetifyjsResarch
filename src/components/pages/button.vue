@@ -3,26 +3,26 @@
     <v-card-text>
       <v-container fluid class="pa-0">
         <v-layout row wrap>
-        <v-flex xs12 sm12 class="py-2">
+        <v-flex xs12 class="py-2">
             <h2>ボタン機能 | v-btn</h2>
             <v-divider></v-divider>
         </v-flex>
-          <v-flex xs12 sm12 class="py-2">
+          <v-flex xs12 class="py-2">
             <v-btn color="success">Success</v-btn>
             <v-btn color="error">Error</v-btn>
             <v-btn color="warning">Warning</v-btn>
             <v-btn color="info">Info</v-btn>
           </v-flex>
 
-          <v-flex xs12 sm12 class="py-2">
+          <v-flex xs12 class="py-2">
             <Dialog/>
           </v-flex>
 
-          <v-flex xs12 sm12 class="py-2">
+          <v-flex xs12 class="py-2">
             <v-btn block color="secondary" dark>Block Button</v-btn>
           </v-flex>
 
-          <v-flex xs12 sm12 class="py-2">
+          <v-flex xs12 class="py-2">
             <v-btn outline color="indigo">Outline Button</v-btn>
             <v-btn outline fab color="teal">
               <v-icon>list</v-icon>
@@ -30,6 +30,7 @@
             <v-btn outline large fab color="indigo">
               <v-icon>edit</v-icon>
             </v-btn>
+            <v-btn round color="primary" dark>Rounded Button</v-btn>
           </v-flex>
 
           <v-flex xs12 sm6 class="py-2">

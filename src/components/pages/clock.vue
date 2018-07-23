@@ -1,12 +1,12 @@
 <template>
   <v-container fluid class="pa-0">
     <v-layout row wrap>
-      <v-flex xs12 sm12 class="py-2">
+      <v-flex xs12 class="py-2">
         <h2>時計機能 | v-time-picker</h2>
         <v-divider></v-divider>
       </v-flex>
 
-      <v-flex xs12 sm12 class="py-2">
+      <v-flex xs12 class="py-2">
         <v-time-picker
           v-model="time"
           type="month"

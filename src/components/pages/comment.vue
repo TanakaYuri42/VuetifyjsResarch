@@ -2,7 +2,7 @@
   <v-container fluid grid-list-md>
     <v-layout row wrap>
 
-      <v-flex xs12 sm12 class="py-2">
+      <v-flex xs12 class="py-2">
         <h2>Vuetifyの基本構造</h2>   
         <v-divider></v-divider>
       </v-flex>
@@ -68,7 +68,7 @@
         </v-card>   
       </v-flex>
 
-      <v-flex xs12 sm12 class="py-2">
+      <v-flex xs12 class="py-2">
         <h2>グリッドシステム</h2>   
         <v-divider></v-divider>
       </v-flex>
@@ -136,7 +136,7 @@
         </v-card>
       </v-flex>
 
-      <v-flex xs12 sm12 class="py-2">
+      <v-flex xs12 class="py-2">
         <h2>カード | v-card</h2>   
         <v-divider></v-divider>
       </v-flex>
@@ -235,7 +235,7 @@
           {
             value: false,
             name: 'v-navigation-drawer',
-            text: "いわゆるサイドメニュー。設定を変更していなければ、画面幅が大きい時に左に出る"
+            text: "いわゆるサイドメニュー。設定を変更していなければ、画面サイズが大きい時に左に出る"
           },
           {
             value: false,
