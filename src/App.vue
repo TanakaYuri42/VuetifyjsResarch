@@ -1,23 +1,22 @@
 <template>
   <v-app>
-    <v-container>
-      <v-navigation-drawer app></v-navigation-drawer>
-      <v-toolbar dark color="cyan lighten-3">
-        <v-spacer></v-spacer>
-        <v-toolbar-title>Vuetifyのcomponents紹介</v-toolbar-title>
-      </v-toolbar>
+    <v-toolbar dark color="cyan lighten-3">
+      <v-spacer></v-spacer>
+      <v-toolbar-title>Vuetifyのcomponents紹介</v-toolbar-title>
+    </v-toolbar>
 
-      <v-content>
+    <v-content>
+      <v-container fuild>
         <!-- <HelloWorld/> -->
         <test/>
-      </v-content>
+      </v-container>
+    </v-content>
 
-      <v-footer height="auto" color="grey darken-3" :fixed="fixed" app>
-        <v-layout row wrap>
-          <span>&copy; 2018</span>
-        </v-layout>
-      </v-footer>
-    </v-container>
+    <v-footer height="auto" color="grey darken-3" :fixed="fixed" app>
+      <v-layout row wrap>
+        <span>&copy; 2018</span>
+      </v-layout>
+    </v-footer>
   </v-app>
 </template>
 

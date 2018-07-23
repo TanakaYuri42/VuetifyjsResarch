@@ -9,15 +9,11 @@
 
       <v-flex xs12>
         <v-card>
-          <v-card-title primary-title>
+          <v-card-text>
             <div>
-              まずはVuetifyにおける基本的な構造についてまとめる。
-              「fluid」などオプションについては、以下の記事がわかりやすい。<br>
-              <a href="https://qiita.com/nulltemp/items/07c6998a4ad8927a9b54" target="_blank">
-                Vuetifyのグリッドシステムの属性について
-              </a>
+              まずはVuetifyにおける基本的な構造についてまとめる
             </div>
-          </v-card-title>
+          </v-card-text>
         </v-card>   
       </v-flex>
 
@@ -42,14 +38,14 @@
           </v-card-title>
           <v-card-text>
               &lt;v-app&gt;<br>
-              &nbsp;&nbsp;&lt;v-navigation-drawer app&gt;&lt;/v-navigation-drawer&gt;<br>
-              &nbsp;&nbsp;&lt;v-toolbar app&gt;&lt;/v-toolbar&gt;<br>
-              &nbsp;&nbsp;&lt;v-content&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;v-container fluid&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;router-view&gt;&lt;/router-view&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/v-container&gt;<br>
-              &nbsp;&nbsp;&lt;/v-content&gt;<br>
-              &nbsp;&nbsp;&lt;v-footer app&gt;&lt;/v-footer&gt;<br>
+              □□&lt;v-navigation-drawer app&gt;&lt;/v-navigation-drawer&gt;<br>
+              □□&lt;v-toolbar app&gt;&lt;/v-toolbar&gt;<br>
+              □□&lt;v-content&gt;<br>
+              □□□□&lt;v-container fluid&gt;<br>
+              □□□□□□&lt;router-view&gt;&lt;/router-view&gt;<br>
+              □□□□&lt;/v-container&gt;<br>
+              □□&lt;/v-content&gt;<br>
+              □□&lt;v-footer app&gt;&lt;/v-footer&gt;<br>
               &lt;/v-app&gt;<br>
           </v-card-text>
         </v-card>   
@@ -62,12 +58,12 @@
           </v-card-title>
           <v-card-text>
               v-app<br>
-              &nbsp;&nbsp;v-navigation-drawer(app)<br>
-              &nbsp;&nbsp;v-toolbar(app)<br>
-              &nbsp;&nbsp;v-content<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v-container(fluid)<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;router-view<br>
-              &nbsp;&nbsp;v-footer(app)<br>
+              □□v-navigation-drawer(app)<br>
+              □□v-toolbar(app)<br>
+              □□v-content<br>
+              □□□□v-container(fluid)<br>
+              □□□□□□router-view<br>
+              □□v-footer(app)<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -75,6 +71,21 @@
       <v-flex xs12 sm12 class="py-2">
         <h2>グリッドシステム</h2>   
         <v-divider></v-divider>
+      </v-flex>
+
+      <v-flex xs12>
+        <v-card>
+          <v-card-text>
+            <div>
+              グリッドシステムによって、画面幅が変わってもそれに対応したレイアウトに整えてくれる。<br>
+              Vuetifyでは、12ポイントのグリッドによって幅が構成されている。グリッド数(幅)は、「v-flex」のオプションで設定可能。<br>
+              オプションについては、以下の記事がわかりやすい。<br>
+              <a href="https://qiita.com/nulltemp/items/07c6998a4ad8927a9b54" target="_blank">
+                Vuetifyのグリッドシステムの属性について
+              </a>
+            </div>
+          </v-card-text>
+        </v-card>   
       </v-flex>
 
       <v-flex xs12>
@@ -98,9 +109,9 @@
           </v-card-title>
           <v-card-text>
               &lt;v-container fluid&gt;<br>
-              &nbsp;&nbsp;&nbsp;&lt;v-layout&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;v-flex&gt;&lt;/v-flex&gt;<br>
-              &nbsp;&nbsp;&nbsp;&lt;/v-layout&gt;<br>
+              □□&lt;v-layout&gt;<br>
+              □□□□&lt;v-flex&gt;&lt;/v-flex&gt;<br>
+              □□&lt;/v-layout&gt;<br>
               &lt;/v-container&gt;<br>
           </v-card-text>
         </v-card>   
@@ -113,10 +124,16 @@
           </v-card-title>
           <v-card-text>
               v-container(fluid)<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;v-layout<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v-flex<br>
+              □□v-layout<br>
+              □□□□v-flex<br>
           </v-card-text>
         </v-card>   
+      </v-flex>
+
+      <v-flex xs12>
+        <v-card>
+          <GridSystem/>
+        </v-card>
       </v-flex>
 
       <v-flex xs12 sm12 class="py-2">
@@ -126,11 +143,11 @@
 
       <v-flex xs12>
         <v-card>
-          <v-card-title primary-title>
+          <v-card-text>
             <div>
-              v-cardは、データのまとまり。汎用性が高い。
+              v-cardは、データのまとまりを入れる。汎用性が高い
             </div>
-          </v-card-title>
+          </v-card-text>
         </v-card>   
       </v-flex>
 
@@ -149,13 +166,39 @@
       </v-flex>
 
       <v-flex xs12 sm6>
-        <v-card height="230px">
+        <v-card height="430px">
+          <v-card-media
+            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
+            height="200px"
+          >
+          </v-card-media>
           <v-card-title primary-title>
-              見本のカード
+              タイトル：v-card-title
           </v-card-title>
-          <v-card-media src="../../../assets/1.png"></v-card-media>
           <v-card-text>
-              このようにv-cardは使えます
+              本文：v-card-text<br>
+              ※画像は以下のURLからお借りしました。<br>
+              https://cdn.vuetifyjs.com/images/cards/sunshine.jpg
+          </v-card-text>
+          <v-card-actions>
+            <v-btn color="blue lighten-4">v-card-actions</v-btn>
+          </v-card-actions>
+        </v-card>   
+      </v-flex>
+
+      <v-flex xs12 sm6>
+        <v-card height="430px">
+          <v-card-title primary-title>
+              ソースコード（pug）
+          </v-card-title>
+          <v-card-text>
+            v-flex(xs12 sm6)<br>
+            □□v-card(height="400px")<br>
+            □□□□v-card-media(src="URL" height="200px")<br>
+            □□□□v-card-title タイトル：v-card-title<br>
+            □□□□v-card-text 本文：v-card-text<br>
+            □□□□v-card-actions<br>
+            □□□□□□v-btn(color="blue lighten-4")<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -165,7 +208,12 @@
 </template>
 
 <script>
+  import GridSystem from './gridsystem'
+
   export default {
+    components: {
+      GridSystem,
+    },
     data () {
       return {
         headers: [
@@ -209,7 +257,7 @@
           {
             value: false,
             name: 'v-container',
-            text: ""
+            text: "v-layoutを囲む部分"
           },
           {
             value: false,
