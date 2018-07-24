@@ -327,6 +327,156 @@
             </v-card>
           </v-expansion-panel-content>
 
+          <v-expansion-panel-content>
+            <div slot="header">ピッカー</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  ユーザーが視覚的に選択できるようにする。ここではDate pickerとTime pickerを紹介する
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="picker_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">プログレスバー（丸）</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/progress" target="_blank">
+                    v-progress-circular
+                  </a>
+                  」参照<br>
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="progresscircle_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">プログレスバー（棒線）</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/progress" target="_blank">
+                    v-progress-liner
+                  </a>
+                  」参照<br>
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="progressliner_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">タブ</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/tabs" target="_blank">
+                    v-tabs
+                  </a>
+                  」参照<br>
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="tab_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">ツールバー</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/toolbars" target="_blank">
+                    v-toolbar
+                  </a>
+                  」参照<br>
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="toolbar_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
 
         </v-expansion-panel>
 
@@ -565,6 +715,12 @@
             name: 'セレクトとの組み合わせ',
             text: "選択された項目の表示にチップを使う",
             url: "https://vuetifyjs.com/ja/components/chips#example-in-selects"
+          }, 
+          {
+            value: false,
+            name: 'ツールチップ',
+            text: "要素にホバーやクリックすることでチップを表示する",
+            url: "https://vuetifyjs.com/ja/components/tooltips"
           },   
         ],
         dialog_list: [
@@ -696,9 +852,235 @@
         pagination_list:[
           {
             value: false,
-            name: '拡張リスト',
-            text: "拡張機能を含んだリスト",
-            url: "https://vuetifyjs.com/ja/components/lists#example-expansion-lists"
+            name: 'ページ数が多い時のリスト切り捨て',
+            text: "ページ数が親コンテンツを超えた場合、リストを切り捨てる",
+            url: "https://vuetifyjs.com/ja/components/paginations#example-limit"
+          }, 
+          {
+            value: false,
+            name: 'ラウンド',
+            text: "ページ数を囲む線の角を丸くする",
+            url: "https://vuetifyjs.com/ja/components/paginations#example-round"
+          },  
+          {
+            value: false,
+            name: 'アイコン',
+            text: "ページ移動のボタンをアイコンにする",
+            url: "https://vuetifyjs.com/ja/components/paginations#example-icons"
+          },  
+          {
+            value: false,
+            name: 'ページ移動無効',
+            text: "ページ移動をできないようにする",
+            url: "https://vuetifyjs.com/ja/components/paginations#example-disabled"
+          },  
+        ],
+        picker_list: [
+          {
+            value: false,
+            name: 'Date picker（カレンダー）',
+            text: "日付/月を選択するためのカレンダーを表示する",
+            url: "https://vuetifyjs.com/ja/components/date-pickers"
+          },  
+          {
+            value: false,
+            name: 'Time picker（時計）',
+            text: "時間を選択するための時計を表示する",
+            url: "https://vuetifyjs.com/ja/components/time-pickers"
+          },  
+        ],
+        progresscircle_list:[
+          {
+            value: false,
+            name: '色の設定',
+            text: "プログレスバーに色をつける",
+            url: "https://vuetifyjs.com/ja/components/progress#example-circular-colored"
+          },  
+          {
+            value: false,
+            name: '不確定',
+            text: "進行の割合を不確定なプログレスバー。延々とアニメーションする",
+            url: "https://vuetifyjs.com/ja/components/progress#example-circular-indeterminate"
+          }, 
+          {
+            value: false,
+            name: 'サイズ変更',
+            text: "プログレスバーのサイズを変更する",
+            url: "https://vuetifyjs.com/ja/components/progress#example-circular-size-and-width"
+          },  
+          {
+            value: false,
+            name: '回転',
+            text: "プログレスバーを進行に合わせて回転させる",
+            url: "https://vuetifyjs.com/ja/components/progress#example-circular-rotate"
+          },  
+        ],
+        progressliner_list: [
+          {
+            value: false,
+            name: '確定',
+            text: "進行の割合が確定しているプログレスバー",
+            url: "https://vuetifyjs.com/ja/components/progress#example-linear-determinate"
+          },  
+          {
+            value: false,
+            name: '確定',
+            text: "進行の割合が不確定なプログレスバー。延々とアニメーションする",
+            url: "https://vuetifyjs.com/ja/components/progress#example-linear-indeterminate"
+          },  
+          {
+            value: false,
+            name: 'バッファ',
+            text: "",
+            url: "https://vuetifyjs.com/ja/components/progress#example-linear-buffer"
+          },
+          {
+            value: false,
+            name: '高さ・色の設定',
+            text: "プログレスバーの高さや色を設定する",
+            url: "https://vuetifyjs.com/ja/components/progress#example-linear-custom-height-and-contextual-colors"
+          },  
+          {
+            value: false,
+            name: '進行バーの色・背景色の設定',
+            text: "プログレスバーの進行中のバーの色と背景色を設定する",
+            url: "https://vuetifyjs.com/ja/components/progress#example-linear-custom-colors"
+          },  
+        ],
+        tab_list: [
+          {
+            value: false,
+            name: '固定タブ',
+            text: "より大きい最小幅を設定して適当したタブ",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-fixed-tabs"
+          },  
+          {
+            value: false,
+            name: '右揃え',
+            text: "右揃えに並べたタブ",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-right"
+          },  
+          {
+            value: false,
+            name: 'コンテンツ',
+            text: "タブ内にツールバーなど、他のコンテンツも取り入れる",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-content"
+          },  
+          {
+            value: false,
+            name: '検索機能',
+            text: "タブ内に検索機能を取り入れる",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-search"
+          },  
+          {
+            value: false,
+            name: 'アイコンとテキスト',
+            text: "タブをアイコンとテキストで表示する",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-icons-and-text"
+          },  
+          {
+            value: false,
+            name: 'タブとツールバーの整列',
+            text: "タブをツールバーのタイトルと並べる",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-align-with-title"
+          },  
+          {
+            value: false,
+            name: '最大幅での表示',
+            text: "利用可能な領域を全て使ってタブを表示する",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-grow"
+          },  
+          {
+            value: false,
+            name: 'メニュー付き',
+            text: "タブの中にメニューをつけて、追加のタブを表示する",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-overflow-to-menu"
+          }, 
+          {
+            value: false,
+            name: 'ページネーション',
+            text: "タブ数が親コンテンツを越えた時、ページネーション表示にする",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-pagination"
+          },  
+          {
+            value: false,
+            name: 'ページネーションにアイコン付加',
+            text: "ページネーションのページ移動のボタンをアイコンにする",
+            url: "https://vuetifyjs.com/ja/components/tabs#example-icons"
+          },  
+        ],
+        toolbar_list: [
+          {
+            value: false,
+            name: 'アプリケーションバー',
+            text: "アプリケーションの主要なツールバー。アイコンやメニューの追加可能",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar"
+          },  
+          {
+            value: false,
+            name: 'ボタンを使用したアプリケーションバー',
+            text: "ボタンをアプリケーション項目として作成する",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar-items"
+          },  
+          {
+            value: false,
+            name: '拡張機能付き',
+            text: "拡張機能を追加したアプリケーションバー",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar-extension"
+          },  
+          {
+            value: false,
+            name: '幅を階層化する',
+            text: "ツールバーの幅を階層化する",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-column-width-with-hierarchy"
+          },
+          {
+            value: false,
+            name: '柔軟なツールバー',
+            text: "カード（v-card）を含めるなど、ツールバーを柔軟にカスタムする",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-flexible-and-card"
+          },  
+          {
+            value: false,
+            name: '検索付きフローティングツールバー',
+            text: "検索機能をつけて、参照するコンテンツ上にツールバーを設置する",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-floating-with-search"
+          },  
+          {
+            value: false,
+            name: 'バリエーション',
+            text: "テーマやヘルパークラスなど、バリエーションを設定する",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-variations"
+          },  
+          {
+            value: false,
+            name: '顕著なツールバー',
+            text: "拡張領域に、要素を配置できるスロットを追加する",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-prominent"
+          },  
+          {
+            value: false,
+            name: '密なツールバー',
+            text: "高さを48pxに減らす",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-dense"
+          },  
+          {
+            value: false,
+            name: 'スクロール',
+            text: "スクロールする時に、ツールバーを画面から切り替える",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-scrolling"
+          },  
+          {
+            value: false,
+            name: 'メニュー付きアプリケーションバー',
+            text: "アプリケーションバーにメニューをつける",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar-menu"
+          }, 
+          {
+            value: false,
+            name: 'システムバー',
+            text: "システムバーを作成する",
+            url: "https://vuetifyjs.com/ja/components/toolbars#example-system-bars-status-window"
           },  
         ]
       }
