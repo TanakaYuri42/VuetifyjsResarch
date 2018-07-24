@@ -657,6 +657,38 @@
             </v-card>
           </v-expansion-panel-content>
 
+          <v-expansion-panel-content>
+            <div slot="header">カード</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/cards" target="_blank">
+                    v-card
+                  </a>
+                  」参照<br>
+                  パネルや画像表示など、あらゆる用途に使用できる汎用的なコンポーネント<br>
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="card_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
 
         </v-expansion-panel>
 
@@ -976,20 +1008,14 @@
           },  
           {
             value: false,
-            name: '◯',
-            text: "",
-            url: "https://vuetifyjs.com/ja/components/lists#example-avatar-title-and-action"
-          }, 
-          {
-            value: false,
             name: '2行表示',
-            text: "",
+            text: "一つの要素に2行の文章が入ったリストを作成する",
             url: "https://vuetifyjs.com/ja/components/lists#example-icon-two-lines-and-action"
           },
           {
             value: false,
             name: '3行表示',
-            text: "",
+            text: "一つの要素に3行の文章が入ったリストを作成する",
             url: "https://vuetifyjs.com/ja/components/lists#example-avatar-three-lines"
           },          
           {
@@ -1461,6 +1487,32 @@
             url: "https://vuetifyjs.com/ja/components/steppers#example-dynamic"
           },  
         ],
+        card_list: [
+          {
+            value: false,
+            name: 'テキスト付きメディア',
+            text: "画像上など、背景にテキストを追加する",
+            url: "https://vuetifyjs.com/ja/components/cards#example-media-with-text"
+          },  
+          {
+            value: false,
+            name: '水平型カード',
+            text: "水平型にカスタマイズされたカード",
+            url: "https://vuetifyjs.com/ja/components/cards#example-horizontal"
+          },  
+          {
+            value: false,
+            name: 'グリッドリスト',
+            text: "グリッドを使って、カードのレイアウトを整える",
+            url: "https://vuetifyjs.com/ja/components/cards#example-grids"
+          },  
+          {
+            value: false,
+            name: '開閉可能なテキストの追加',
+            text: "選択するまで閉じられた状態の補助的なテキストを追加する",
+            url: "https://vuetifyjs.com/ja/components/cards#example-custom-actions"
+          },  
+        ]
       }
     },
   }

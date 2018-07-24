@@ -4,12 +4,6 @@
     <Index/>
     <Comment/>
     <Button/>
-    <!-- <Icon/> -->
-    <!-- <h2>ステッパー | v-stepper</h2>
-    <Stepper/>
-    <Clock/>
-    <Calender/>
-    <Iterator/> -->
   </v-content>
 </template>
 
