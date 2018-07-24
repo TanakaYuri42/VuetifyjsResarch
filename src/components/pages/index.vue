@@ -206,6 +206,7 @@
                   基本的な概要は「
                   <a href="https://vuetifyjs.com/ja/components/dialogs" target="_blank">v-dialog</a>
                   」参照<br>
+                  シンプルなダイアログの見本は<a href="https://vuetifyjs.com/ja/components/dialogs#example-advanced" target="_blank">こちら</a>
                 </div>
                 <v-data-table
                   :headers="headers"
@@ -656,6 +657,7 @@
             </v-card>
           </v-expansion-panel-content>
 
+
         </v-expansion-panel>
 
       </div>
@@ -854,6 +856,12 @@
             text: "画面の左端に出るナビゲーション",
             url: "https://vuetifyjs.com/ja/components/navigation-drawers"
           }, 
+          {
+            value: false,
+            name: 'メニュー',
+            text: "ほぼ全ての要素に配置可能",
+            url: "https://vuetifyjs.com/ja/components/menus#example-menus"
+          }, 
         ],
         breadcrumbs_list: [
           {
@@ -910,12 +918,6 @@
         dialog_list: [
           {
             value: false,
-            name: "◯",
-            text: "",
-            url: "https://vuetifyjs.com/ja/components/dialogs#example-without-activator"
-          }, 
-          {
-            value: false,
             name: 'モーダル',
             text: "ダイアログ画面以外をクリックしても、閉じないようにする",
             url: "https://vuetifyjs.com/ja/components/dialogs#example-modal"
@@ -937,12 +939,6 @@
             name: 'オーバーフロー',
             text: "ウィンドウ画面に収まらないダイアログ画面はスクロールする",
             url: "https://vuetifyjs.com/ja/components/dialogs#example-overflowed"
-          }, 
-          {
-            value: false,
-            name: '◯',
-            text: "",
-            url: "https://vuetifyjs.com/ja/components/dialogs#example-advanced"
           }, 
           {
             value: false,
@@ -1396,6 +1392,12 @@
             text: "行の新規追加・編集・削除をする",
             url: "https://vuetifyjs.com/ja/components/data-tables#example-crud"
           },  
+          {
+            value: false,
+            name: 'データイテレータ',
+            text: "テーブルと似ているコンポーネント。データの表示を細かくカスタマイズできる",
+            url: "https://vuetifyjs.com/ja/components/data-iterator"
+          },  
         ],
         stepper_list: [
           {
@@ -1458,7 +1460,7 @@
             text: "ユーザーの操作で、動的にステップを追加・削除する",
             url: "https://vuetifyjs.com/ja/components/steppers#example-dynamic"
           },  
-        ]
+        ],
       }
     },
   }
