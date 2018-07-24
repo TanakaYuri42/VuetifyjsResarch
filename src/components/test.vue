@@ -1,5 +1,7 @@
 <template>
   <v-content>
+    <h2>Component一覧表</h2>
+    <Index/>
     <Comment/>
     <Button/>
     <!-- <Icon/> -->
@@ -8,8 +10,6 @@
     <Clock/>
     <Calender/>
     <Iterator/> -->
-    <h2>Component一覧表</h2>
-    <Index/>
   </v-content>
 </template>
 
