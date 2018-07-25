@@ -2,7 +2,7 @@
   <v-app>
     <v-toolbar dark color="cyan lighten-3">
       <v-spacer></v-spacer>
-      <v-toolbar-title>Vuetifyのcomponents紹介</v-toolbar-title>
+      <v-toolbar-title>Vuetify.jsの調査まとめ</v-toolbar-title>
     </v-toolbar>
 
     <v-content>

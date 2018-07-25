@@ -45,6 +45,8 @@
           :items="gridsizeList"
           hide-actions
           class="elevation-1"
+          hide-headers="true"
+          disable-initial-sort="true"
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>

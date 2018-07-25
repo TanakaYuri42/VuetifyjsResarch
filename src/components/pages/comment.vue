@@ -23,6 +23,8 @@
           :items="contents"
           hide-actions
           class="elevation-1"
+          hide-headers="true"
+          disable-initial-sort="true"
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
@@ -38,14 +40,14 @@
           </v-card-title>
           <v-card-text>
               &lt;v-app&gt;<br>
-              □□&lt;v-navigation-drawer app&gt;&lt;/v-navigation-drawer&gt;<br>
-              □□&lt;v-toolbar app&gt;&lt;/v-toolbar&gt;<br>
-              □□&lt;v-content&gt;<br>
-              □□□□&lt;v-container fluid&gt;<br>
-              □□□□□□&lt;router-view&gt;&lt;/router-view&gt;<br>
-              □□□□&lt;/v-container&gt;<br>
-              □□&lt;/v-content&gt;<br>
-              □□&lt;v-footer app&gt;&lt;/v-footer&gt;<br>
+              ␣␣&lt;v-navigation-drawer app&gt;&lt;/v-navigation-drawer&gt;<br>
+              ␣␣&lt;v-toolbar app&gt;&lt;/v-toolbar&gt;<br>
+              ␣␣&lt;v-content&gt;<br>
+              ␣␣␣␣&lt;v-container fluid&gt;<br>
+              ␣␣␣␣␣␣&lt;router-view&gt;&lt;/router-view&gt;<br>
+              ␣␣␣␣&lt;/v-container&gt;<br>
+              ␣␣&lt;/v-content&gt;<br>
+              ␣␣&lt;v-footer app&gt;&lt;/v-footer&gt;<br>
               &lt;/v-app&gt;<br>
           </v-card-text>
         </v-card>   
@@ -58,12 +60,12 @@
           </v-card-title>
           <v-card-text>
               v-app<br>
-              □□v-navigation-drawer(app)<br>
-              □□v-toolbar(app)<br>
-              □□v-content<br>
-              □□□□v-container(fluid)<br>
-              □□□□□□router-view<br>
-              □□v-footer(app)<br>
+              ␣␣v-navigation-drawer(app)<br>
+              ␣␣v-toolbar(app)<br>
+              ␣␣v-content<br>
+              ␣␣␣␣v-container(fluid)<br>
+              ␣␣␣␣␣␣router-view<br>
+              ␣␣v-footer(app)<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -95,6 +97,7 @@
           hide-actions
           class="elevation-1"
           hide-headers="true"
+          disable-initial-sort="true"
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
@@ -110,9 +113,9 @@
           </v-card-title>
           <v-card-text>
               &lt;v-container fluid&gt;<br>
-              □□&lt;v-layout&gt;<br>
-              □□□□&lt;v-flex&gt;&lt;/v-flex&gt;<br>
-              □□&lt;/v-layout&gt;<br>
+              ␣␣&lt;v-layout&gt;<br>
+              ␣␣␣␣&lt;v-flex&gt;&lt;/v-flex&gt;<br>
+              ␣␣&lt;/v-layout&gt;<br>
               &lt;/v-container&gt;<br>
           </v-card-text>
         </v-card>   
@@ -125,8 +128,8 @@
           </v-card-title>
           <v-card-text>
               v-container(fluid)<br>
-              □□v-layout<br>
-              □□□□v-flex<br>
+              ␣␣v-layout<br>
+              ␣␣␣␣v-flex<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -158,6 +161,8 @@
           :items="contents3"
           hide-actions
           class="elevation-1"
+          hide-headers="true"
+          disable-initial-sort="true"
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
@@ -194,12 +199,12 @@
           </v-card-title>
           <v-card-text>
             v-flex(xs12 sm6)<br>
-            □□v-card(height="400px")<br>
-            □□□□v-card-media(src="URL" height="200px")<br>
-            □□□□v-card-title タイトル：v-card-title<br>
-            □□□□v-card-text 本文：v-card-text<br>
-            □□□□v-card-actions<br>
-            □□□□□□v-btn(color="blue lighten-4")<br>
+            ␣␣v-card(height="400px")<br>
+            ␣␣␣␣v-card-media(src="URL" height="200px")<br>
+            ␣␣␣␣v-card-title タイトル：v-card-title<br>
+            ␣␣␣␣v-card-text 本文：v-card-text<br>
+            ␣␣␣␣v-card-actions<br>
+            ␣␣␣␣␣␣v-btn(color="blue lighten-4")<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -230,18 +235,17 @@
           {
             value: false,
             name: 'v-app',
-            text: "Vuetifyのアプリケーションをうまく作動するためには必要。一番外枠になる。"
-                  + "もしうまくVuetifyが動かない場合、これを入れ忘れている可能性があるかも"
+            text: ""
           },
           {
             value: false,
             name: 'v-navigation-drawer',
-            text: "いわゆるサイドメニュー。設定を変更していなければ、画面サイズが大きい時に左に出る"
+            text: "ドロワーメニュー。設定を変更していなければ、画面サイズが大きい時に左に出る"
           },
           {
             value: false,
             name: 'v-toolbar',
-            text: "いわゆるヘッダーメニュー。上に出るやつ"
+            text: "ツールバー"
           },
           {
             value: false,
@@ -251,7 +255,7 @@
           {
             value: false,
             name: 'v-footer',
-            text: "いわゆるフッター部分"
+            text: "フッター"
           },
         ],
         contents2: [
