@@ -619,7 +619,7 @@
                     v-parallax
                   </a>
                   」参照<br>
-                  画像をウィンドウよりもスクロールして見えるようにする3Dエフェクトを作成する
+                  画像をウィンドウよりも遅くスクロールすることで3Dエフェクトを作成する
                 </div>
               </v-card-text>
             </v-card>
@@ -721,7 +721,7 @@
             value: false,
             name: 'ドロップダウンボタン',
             text: "クリックするとリストを表示できるボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-depressed",
+            url: "https://vuetifyjs.com/ja/components/buttons#example-dropdown",
           },
           {
             value: false,
@@ -890,14 +890,14 @@
           {
             value: false,
             name: 'ツールバー',
-            text: "主に画面上に出てくるバー",
-            url: "https://vuetifyjs.com/ja/components/lists"
+            text: "主に画面の上に出てくるバー",
+            url: "https://vuetifyjs.com/ja/components/toolbars"
           }, 
           {
             value: false,
             name: 'メニュー',
             text: "ほぼ全ての要素に配置可能",
-            url: "https://vuetifyjs.com/ja/components/menus#example-menus"
+            url: "https://vuetifyjs.com/ja/components/menus"
           }, 
           {
             value: false,
@@ -1065,7 +1065,7 @@
         picker_list: [
           {
             value: false,
-            name: 'Date picker（カレンダー）',
+            name: 'Date/month picker（カレンダー）',
             text: "日付/月を選択するためのカレンダーを表示する",
             url: "https://vuetifyjs.com/ja/components/date-pickers"
           },  
@@ -1111,14 +1111,14 @@
           },  
           {
             value: false,
-            name: '確定',
+            name: '不確定',
             text: "進行の割合が不確定なプログレスバー。延々とアニメーションする",
             url: "https://vuetifyjs.com/ja/components/progress#example-linear-indeterminate"
           },  
           {
             value: false,
             name: 'バッファ',
-            text: "",
+            text: "バッファを取り入れる",
             url: "https://vuetifyjs.com/ja/components/progress#example-linear-buffer"
           },
           {
@@ -1138,7 +1138,7 @@
           {
             value: false,
             name: '固定タブ',
-            text: "より大きい最小幅を設定して適当したタブ",
+            text: "より大きい最小幅を設定して適応したタブ",
             url: "https://vuetifyjs.com/ja/components/tabs#example-fixed-tabs"
           },  
           {

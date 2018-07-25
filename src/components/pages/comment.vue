@@ -94,6 +94,7 @@
           :items="contents2"
           hide-actions
           class="elevation-1"
+          hide-headers="true"
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
