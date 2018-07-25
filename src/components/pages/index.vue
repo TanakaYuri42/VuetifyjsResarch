@@ -128,6 +128,36 @@
           </v-expansion-panel-content>
 
           <v-expansion-panel-content>
+            <div slot="header">チップ</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/chips" target="_blank">v-chip</a>
+                  」参照<br>
+                  基本型、アイコン付、写真付、閉じるボタン付の4種類ある
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="chip_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
             <div slot="header">ナビゲーション</div>
             <v-card>
               <v-card-text>
@@ -155,32 +185,19 @@
           </v-expansion-panel-content>
 
           <v-expansion-panel-content>
-            <div slot="header">パンくずリスト</div>
+            <div slot="header">ツールバー</div>
             <v-card>
               <v-card-text>
                 <div>
                   基本的な概要は「
-                  <a href="https://vuetifyjs.com/en/components/breadcrumbs" target="_blank">v-breadcrumbs</a>
+                  <a href="https://vuetifyjs.com/ja/components/toolbars" target="_blank">
+                    v-toolbar
+                  </a>
                   」参照<br>
-                  アイコン表示や、アイコンによる区切りも設定できる
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-
-          <v-expansion-panel-content>
-            <div slot="header">チップ</div>
-            <v-card>
-              <v-card-text>
-                <div>
-                  基本的な概要は「
-                  <a href="https://vuetifyjs.com/ja/components/chips" target="_blank">v-chip</a>
-                  」参照<br>
-                  基本型、アイコン付、写真付、閉じるボタン付の4種類ある
                 </div>
                 <v-data-table
                   :headers="headers"
-                  :items="chip_list"
+                  :items="toolbar_list"
                   hide-actions
                   class="elevation-1" 
                   hide-headers="true"
@@ -194,6 +211,129 @@
                     <td>{{ props.item.text }}</td>
                   </template>
                 </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">リスト</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/lists" target="_blank">v-list</a>
+                  」参照<br>
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="list_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">テーブル</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/data-tables" target="_blank">
+                    v-data-table
+                  </a>
+                  」参照<br>
+                  表形式でデータ表示。ソート、検索、ページネーション、編集、行選択などの機能を含んでいる
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="table_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">イテレータ</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/data-iterator" target="_blank">
+                    v-data-iterator
+                  </a>
+                  」参照<br>
+                  データ表示を細かくカスタマイズする。テーブルと似ている
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">カード</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/cards" target="_blank">
+                    v-card
+                  </a>
+                  」参照<br>
+                  パネルや画像表示など、あらゆる用途に使用できる汎用的なコンポーネント<br>
+                </div>
+                <v-data-table
+                  :headers="headers"
+                  :items="card_list"
+                  hide-actions
+                  class="elevation-1" 
+                  hide-headers="true"
+                >
+                  <template slot="items" slot-scope="props">
+                      <td>
+                        <a :href="props.item.url" target="_blank">
+                          {{ props.item.name }}
+                        </a>
+                      </td>
+                    <td>{{ props.item.text }}</td>
+                  </template>
+                </v-data-table>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">パンくずリスト</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/en/components/breadcrumbs" target="_blank">v-breadcrumbs</a>
+                  」参照<br>
+                  アイコン表示や、アイコンによる区切りも設定できる
+                </div>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -240,35 +380,6 @@
                 <v-data-table
                   :headers="headers"
                   :items="jumbotron_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-
-          <v-expansion-panel-content>
-            <div slot="header">リスト</div>
-            <v-card>
-              <v-card-text>
-                <div>
-                  基本的な概要は「
-                  <a href="https://vuetifyjs.com/ja/components/lists" target="_blank">v-list</a>
-                  」参照<br>
-                </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="list_list"
                   hide-actions
                   class="elevation-1" 
                   hide-headers="true"
@@ -436,37 +547,6 @@
           </v-expansion-panel-content>
 
           <v-expansion-panel-content>
-            <div slot="header">ツールバー</div>
-            <v-card>
-              <v-card-text>
-                <div>
-                  基本的な概要は「
-                  <a href="https://vuetifyjs.com/ja/components/toolbars" target="_blank">
-                    v-toolbar
-                  </a>
-                  」参照<br>
-                </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="toolbar_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-
-          <v-expansion-panel-content>
             <div slot="header">拡張パネル</div>
             <v-card>
               <v-card-text>
@@ -509,38 +589,6 @@
                   」参照<br>
                   ユーザーの操作に合わせて、動的に要素のサイズ変更や角丸処理を行う
                 </div>
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-
-          <v-expansion-panel-content>
-            <div slot="header">テーブル</div>
-            <v-card>
-              <v-card-text>
-                <div>
-                  基本的な概要は「
-                  <a href="https://vuetifyjs.com/ja/components/data-tables" target="_blank">
-                    v-data-table
-                  </a>
-                  」参照<br>
-                  表形式でデータ表示。ソート、検索、ページネーション、編集、行選択などの機能を含んでいる
-                </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="table_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -640,55 +688,6 @@
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
-
-          <v-expansion-panel-content>
-            <div slot="header">イテレータ</div>
-            <v-card>
-              <v-card-text>
-                <div>
-                  基本的な概要は「
-                  <a href="https://vuetifyjs.com/ja/components/data-iterator" target="_blank">
-                    v-data-iterator
-                  </a>
-                  」参照<br>
-                  データ表示を細かくカスタマイズする。テーブルと似ている
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-
-          <v-expansion-panel-content>
-            <div slot="header">カード</div>
-            <v-card>
-              <v-card-text>
-                <div>
-                  基本的な概要は「
-                  <a href="https://vuetifyjs.com/ja/components/cards" target="_blank">
-                    v-card
-                  </a>
-                  」参照<br>
-                  パネルや画像表示など、あらゆる用途に使用できる汎用的なコンポーネント<br>
-                </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="card_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-
 
         </v-expansion-panel>
 
@@ -890,9 +889,21 @@
           }, 
           {
             value: false,
+            name: 'ツールバー',
+            text: "主に画面上に出てくるバー",
+            url: "https://vuetifyjs.com/ja/components/lists"
+          }, 
+          {
+            value: false,
             name: 'メニュー',
             text: "ほぼ全ての要素に配置可能",
             url: "https://vuetifyjs.com/ja/components/menus#example-menus"
+          }, 
+          {
+            value: false,
+            name: 'リスト',
+            text: "リンクオプション有り。上記のナビゲーション等と組み合わせやすい",
+            url: "https://vuetifyjs.com/ja/components/lists"
           }, 
         ],
         breadcrumbs_list: [
@@ -1005,49 +1016,13 @@
             name: '区切り線',
             text: "リスト間を区切る線。テーマ変更、インデント設定も可能",
             url: "https://vuetifyjs.com/ja/components/dividers"
-          },  
-          {
-            value: false,
-            name: '2行表示',
-            text: "一つの要素に2行の文章が入ったリストを作成する",
-            url: "https://vuetifyjs.com/ja/components/lists#example-icon-two-lines-and-action"
-          },
-          {
-            value: false,
-            name: '3行表示',
-            text: "一つの要素に3行の文章が入ったリストを作成する",
-            url: "https://vuetifyjs.com/ja/components/lists#example-avatar-three-lines"
           },          
-          {
-            value: false,
-            name: 'Avatar with title and action',
-            text: "",
-            url: "https://vuetifyjs.com/ja/components/lists#example-avatar-subheader-title-and-action"
-          }, 
-          {
-            value: false,
-            name: 'Subheadings and dividers',
-            text: "",
-            url: "https://vuetifyjs.com/ja/components/lists#example-subheadings-and-dividers"
-          },  
           {
             value: false,
             name: 'カード入りリスト',
             text: "カード（v-card）を含んだリスト",
             url: "https://vuetifyjs.com/ja/components/lists#example-card-list"
-          },  
-          {
-            value: false,
-            name: 'Title with sub-title, actions and action-text',
-            text: "",
-            url: "https://vuetifyjs.com/ja/components/lists#example-title-subtitle-actions-and-action-text"
-          },  
-          {
-            value: false,
-            name: 'Action with title and sub-title',
-            text: "",
-            url: "https://vuetifyjs.com/ja/components/lists#example-action-title-and-subtitle"
-          },  
+          }, 
           {
             value: false,
             name: '拡張リスト',
@@ -1512,7 +1487,7 @@
             text: "選択するまで閉じられた状態の補助的なテキストを追加する",
             url: "https://vuetifyjs.com/ja/components/cards#example-custom-actions"
           },  
-        ]
+        ],
       }
     },
   }
