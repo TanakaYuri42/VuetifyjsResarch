@@ -236,7 +236,7 @@
             value: false,
             name: 'v-app',
             text: "Vuetifyのアプリケーションを正しく起動するために必要なコンポーネント。<br>"
-                  + "全Vuetifyコンポーネントの一番外枠に配置する"
+                  + "全Vuetifyコンポーネントの親要素であり、一番外枠に配置する必要がある"
           },
           { 
             value: false,
