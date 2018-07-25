@@ -11,7 +11,7 @@
         <v-card>
           <v-card-text>
             <div>
-              まずはVuetifyにおける基本的な構造についてまとめる
+              Vuetifyにおける基本的な構造についてまとめる
             </div>
           </v-card-text>
         </v-card>   
@@ -28,7 +28,7 @@
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
-            <td>{{ props.item.text }}</td>
+            <td><span v-html="props.item.text"></span></td>
           </template>
         </v-data-table>
       </v-flex>
@@ -235,9 +235,10 @@
           {
             value: false,
             name: 'v-app',
-            text: ""
+            text: "Vuetifyのアプリケーションを正しく起動するために必要なコンポーネント。<br>"
+                  + "全Vuetifyコンポーネントの一番外枠に配置する"
           },
-          {
+          { 
             value: false,
             name: 'v-navigation-drawer',
             text: "ドロワーメニュー。設定を変更していなければ、画面サイズが大きい時に左に出る"

@@ -14,7 +14,7 @@
 
     <v-footer height="auto" color="grey darken-3" :fixed="fixed" app>
       <v-layout row wrap>
-        <span>&copy; 2018</span>
+        <span>&copy; 2018-07-25</span>
       </v-layout>
     </v-footer>
   </v-app>

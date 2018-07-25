@@ -427,6 +427,21 @@
           </v-expansion-panel-content>
 
           <v-expansion-panel-content>
+            <div slot="header">フッター</div>
+            <v-card>
+              <v-card-text>
+                <div>
+                  基本的な概要は「
+                  <a href="https://vuetifyjs.com/ja/components/footer" target="_blank">
+                    v-footer
+                  </a>
+                  」参照
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
             <div slot="header">ピッカー</div>
             <v-card>
               <v-card-text>
@@ -731,7 +746,7 @@
           },
           {
             value: false,
-            name: 'アイコンボタン',
+            name: 'アイコンのボタン化',
             text: "アイコンをボタンとして使用する",
             url: "https://vuetifyjs.com/ja/components/buttons#example-icon",
           },
@@ -767,14 +782,14 @@
           },
           {
             value: false,
-            name: 'ブロック',
+            name: 'ブロックボタン',
             text: "可能な限り横に広がったボタン",
             url: "https://vuetifyjs.com/ja/components/buttons#example-block"
           },
           {
             value: false,
-            name: 'ツールバー',
-            text: "ツールバーとボタンを融合させる",
+            name: 'ツールバーとの組み合わせ',
+            text: "ツールバーにボタンを入れる",
             url: "https://vuetifyjs.com/ja/components/buttons#example-app-bar"
           },
           {
@@ -805,13 +820,13 @@
           },
           {
             value: false,
-            name: 'アイコンボタン',
-            text: "ボタンとアイコンの融合や、アイコンをボタンとしての使用",
+            name: 'アイコンとボタン',
+            text: "ボタンとアイコンを融合したり、アイコンをボタンとして使用したりする",
             url: "https://vuetifyjs.com/ja/components/icons#example-buttons"
           },
           {
             value: false,
-            name: 'アイコンバッジ',
+            name: 'アイコンのバッジ化',
             text: "アイコンをバッジとして使用する",
             url: "https://vuetifyjs.com/ja/components/badges#example-icon"
           }, 
@@ -832,7 +847,7 @@
           {
             value: false,
             name: 'アイコンの設定変更',
-            text: "アラートのアイコンの変更や削除",
+            text: "アラートのアイコンの変更や削除をする",
             url: "https://vuetifyjs.com/ja/components/alerts#example-icon"
           },
           {
@@ -863,14 +878,14 @@
           },  
           {
             value: false,
-            name: 'アイコンバッジ',
+            name: 'アイコンのバッジ化',
             text: "アイコンをバッジとして使用する",
             url: "https://vuetifyjs.com/ja/components/badges#example-icon"
           },
           {
             value: false,
             name: 'バッジの表示切り替え',
-            text: "バッジを表示したり、非表示にしたりする",
+            text: "バッジの表示・非表示を切り替える",
             url: "https://vuetifyjs.com/ja/components/badges#example-visibility"
           }, 
         ],
@@ -962,7 +977,7 @@
           {
             value: false,
             name: 'モーダル',
-            text: "ダイアログ画面以外をクリックしても、閉じないようにする",
+            text: "ダイアログ画面外をクリックしても、閉じないようにする",
             url: "https://vuetifyjs.com/ja/components/dialogs#example-modal"
           }, 
           {
@@ -1032,7 +1047,7 @@
           {
             value: false,
             name: 'サブヘッダー',
-            text: "リストのセクションを区切るために使用される、サブヘッダーの編集をする",
+            text: "リストのセクションを区切るために使用されるもの",
             url: "https://vuetifyjs.com/ja/components/subheaders"
           },  
         ],
@@ -1040,7 +1055,7 @@
           {
             value: false,
             name: 'ページ数が多い時のリスト切り捨て',
-            text: "ページ数が親コンテンツを超えた場合、リストを切り捨てる",
+            text: "ページ数が親コンテンツを超えた場合、ページ数の表示を切り捨てる",
             url: "https://vuetifyjs.com/ja/components/paginations#example-limit"
           }, 
           {
@@ -1057,7 +1072,7 @@
           },  
           {
             value: false,
-            name: 'ページ移動無効',
+            name: 'ページ移動無効化',
             text: "ページ移動をできないようにする",
             url: "https://vuetifyjs.com/ja/components/paginations#example-disabled"
           },  
@@ -1150,7 +1165,7 @@
           {
             value: false,
             name: 'コンテンツ',
-            text: "タブ内にツールバーなど、他のコンテンツも取り入れる",
+            text: "タブ内に他コンテンツ（ツールバーなど）を取り入れる",
             url: "https://vuetifyjs.com/ja/components/tabs#example-content"
           },  
           {
@@ -1206,7 +1221,7 @@
           {
             value: false,
             name: 'ボタンを使用したアプリケーションバー',
-            text: "ボタンをアプリケーション項目として作成する",
+            text: "ボタンをアプリケーション項目として追加する",
             url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar-items"
           },  
           {
@@ -1241,13 +1256,13 @@
           },  
           {
             value: false,
-            name: '顕著なツールバー',
+            name: '主要なツールバー',
             text: "拡張領域に、要素を配置できるスロットを追加する",
             url: "https://vuetifyjs.com/ja/components/toolbars#example-prominent"
           },  
           {
             value: false,
-            name: '密なツールバー',
+            name: '高密度のツールバー',
             text: "高さを48pxに減らす",
             url: "https://vuetifyjs.com/ja/components/toolbars#example-dense"
           },  
@@ -1280,7 +1295,7 @@
           {
             value: false,
             name: '外部コントロール',
-            text: "ボタンなど、パネル外からの操作でパネルを開閉する",
+            text: "パネル外から操作することでパネルを開閉する",
             url: "https://vuetifyjs.com/ja/components/expansion-panels#example-external"
           }, 
           {
@@ -1306,7 +1321,7 @@
           {
             value: false,
             name: 'データがない時の設定',
-            text: "表のデータがない時に表示するhtmlを設定する",
+            text: "データが存在しない時に表示するhtmlを設定する",
             url: "https://vuetifyjs.com/ja/components/data-tables#example-no-data"
           }, 
           {
@@ -1317,8 +1332,8 @@
           }, 
           {
             value: false,
-            name: 'プログレス',
-            text: "データをロードしている時にプレグレスを表示する",
+            name: 'プログレスバー',
+            text: "データをロードしている時にプログレスバーを表示する",
             url: "https://vuetifyjs.com/ja/components/data-tables#example-progress"
           }, 
           {
@@ -1395,7 +1410,7 @@
           },  
           {
             value: false,
-            name: 'データイテレータ',
+            name: 'イテレータ',
             text: "テーブルと似ているコンポーネント。データの表示を細かくカスタマイズできる",
             url: "https://vuetifyjs.com/ja/components/data-iterator"
           },  
@@ -1466,7 +1481,7 @@
           {
             value: false,
             name: 'テキスト付きメディア',
-            text: "画像上など、背景にテキストを追加する",
+            text: "画像上などの、背景にテキストを表示する",
             url: "https://vuetifyjs.com/ja/components/cards#example-media-with-text"
           },  
           {
