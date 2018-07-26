@@ -442,22 +442,7 @@
                   </a>
                   」参照<br>
                 </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="progressliner_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
+                <Progress-l/>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -648,6 +633,7 @@ import Alert from './index_table_data/alert_table'
 import Badge from './index_table_data/badge_table'
 import Chip from './index_table_data/chip_table'
 import ProgressC from './index_table_data/progress_c_table'
+import ProgressL from './index_table_data/progress_l_table'
 
   export default {
     components: {
@@ -656,7 +642,8 @@ import ProgressC from './index_table_data/progress_c_table'
       Alert,
       Badge,
       Chip,
-      ProgressC
+      ProgressC,
+      ProgressL
     },
     data () {
       return {
@@ -821,38 +808,6 @@ import ProgressC from './index_table_data/progress_c_table'
             name: 'Time picker（時計）',
             text: "時間を選択するための時計を表示する",
             url: "https://vuetifyjs.com/ja/components/time-pickers"
-          },  
-        ],
-        progressliner_list: [
-          {
-            value: false,
-            name: '確定',
-            text: "進行の割合が確定しているプログレスバー",
-            url: "https://vuetifyjs.com/ja/components/progress#example-linear-determinate"
-          },  
-          {
-            value: false,
-            name: '不確定',
-            text: "進行の割合が不確定なプログレスバー。延々とアニメーションする",
-            url: "https://vuetifyjs.com/ja/components/progress#example-linear-indeterminate"
-          },  
-          {
-            value: false,
-            name: 'バッファ',
-            text: "バッファを取り入れる",
-            url: "https://vuetifyjs.com/ja/components/progress#example-linear-buffer"
-          },
-          {
-            value: false,
-            name: '高さ・色の設定',
-            text: "プログレスバーの高さや色を設定する",
-            url: "https://vuetifyjs.com/ja/components/progress#example-linear-custom-height-and-contextual-colors"
-          },  
-          {
-            value: false,
-            name: '進行バーの色・背景色の設定',
-            text: "プログレスバーの進行中のバーの色と背景色を設定する",
-            url: "https://vuetifyjs.com/ja/components/progress#example-linear-custom-colors"
           },  
         ],
         tab_list: [
