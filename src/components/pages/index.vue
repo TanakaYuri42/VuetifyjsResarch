@@ -77,22 +77,7 @@
                   」参照<br>
                   基本型、アイコン付、写真付、閉じるボタン付の4種類ある
                 </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="chip_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
+                <Chip/>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -268,11 +253,33 @@
             <div slot="header">パンくずリスト</div>
             <v-card>
               <v-card-text>
-                <div>
+                <div style="padding-bottom:20px;">
                   基本的な概要は「
                   <a href="https://vuetifyjs.com/en/components/breadcrumbs" target="_blank">v-breadcrumbs</a>
                   」参照<br>
                   アイコン表示や、アイコンによる区切りも設定できる
+                </div>
+                <v-divider></v-divider>
+                <div class="text-xs-center d-flex align-center">
+                  <v-breadcrumbs divider="/" style="display:inline;">
+                    <v-breadcrumbs-item
+                      v-for="item in items"
+                      :key="item.text"
+                      :disabled="item.disabled"
+                    >
+                      {{ item.text }}
+                    </v-breadcrumbs-item>
+                  </v-breadcrumbs>
+                  <v-breadcrumbs style="display:inline;">
+                    <v-icon slot="divider">forward</v-icon>
+                    <v-breadcrumbs-item
+                      v-for="item in items"
+                      :disabled="item.disabled"
+                      :key="item.text"
+                    >
+                      {{ item.text }}
+                    </v-breadcrumbs-item>
+                  </v-breadcrumbs>
                 </div>
               </v-card-text>
             </v-card>
@@ -419,22 +426,7 @@
                   </a>
                   」参照<br>
                 </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="progresscircle_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
+                <ProgressC/>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -654,17 +646,25 @@ import ButtonTable from './index_table_data/button_table'
 import Icon from './index_table_data/icon_table'
 import Alert from './index_table_data/alert_table'
 import Badge from './index_table_data/badge_table'
-
+import Chip from './index_table_data/chip_table'
+import ProgressC from './index_table_data/progress_c_table'
 
   export default {
     components: {
       ButtonTable,
       Icon,
       Alert,
-      Badge
+      Badge,
+      Chip,
+      ProgressC
     },
     data () {
       return {
+        items: [
+          {text: 'Dashboard', disabled: false},
+          {text: 'Link 1',disabled: false},
+          {text: 'Link 2',disabled: true}
+        ],
         nav_list: [
          {
             value: false,
@@ -704,50 +704,6 @@ import Badge from './index_table_data/badge_table'
             text: "アイコンの表示や、アイコンによる区切りなどができる",
             url: "https://vuetifyjs.com/ja/components/breadcrumbs"
           }, 
-        ],
-        chip_list: [
-          {
-            value: false,
-            name: '色の設定',
-            text: "チップに色をつける",
-            url: "https://vuetifyjs.com/ja/components/chips#example-colored"
-          },  
-          {
-            value: false,
-            name: 'アイコンの設定',
-            text: "チップにアイコンをつける",
-            url: "https://vuetifyjs.com/ja/components/chips#example-icon"
-          },
-          {
-            value: false,
-            name: 'アウトラインチップ',
-            text: "テキストの色を境界線として表示したチップ",
-            url: "https://vuetifyjs.com/ja/components/chips#example-outline"
-          },  
-          {
-            value: false,
-            name: 'ラベル',
-            text: "ラベルのチップ",
-            url: "https://vuetifyjs.com/ja/components/chips#example-label"
-          },
-          {
-            value: false,
-            name: '閉じるボタン付きチップ',
-            text: "チップに閉じるボタンをつける",
-            url: "https://vuetifyjs.com/ja/components/chips#example-closable"
-          }, 
-          {
-            value: false,
-            name: 'セレクトとの組み合わせ',
-            text: "選択された項目の表示にチップを使う",
-            url: "https://vuetifyjs.com/ja/components/chips#example-in-selects"
-          }, 
-          {
-            value: false,
-            name: 'ツールチップ',
-            text: "要素にホバーやクリックすることでチップを表示する",
-            url: "https://vuetifyjs.com/ja/components/tooltips"
-          },   
         ],
         dialog_list: [
           {
@@ -865,32 +821,6 @@ import Badge from './index_table_data/badge_table'
             name: 'Time picker（時計）',
             text: "時間を選択するための時計を表示する",
             url: "https://vuetifyjs.com/ja/components/time-pickers"
-          },  
-        ],
-        progresscircle_list:[
-          {
-            value: false,
-            name: '色の設定',
-            text: "プログレスバーに色をつける",
-            url: "https://vuetifyjs.com/ja/components/progress#example-circular-colored"
-          },  
-          {
-            value: false,
-            name: '不確定',
-            text: "進行の割合を不確定なプログレスバー。延々とアニメーションする",
-            url: "https://vuetifyjs.com/ja/components/progress#example-circular-indeterminate"
-          }, 
-          {
-            value: false,
-            name: 'サイズ変更',
-            text: "プログレスバーのサイズを変更する",
-            url: "https://vuetifyjs.com/ja/components/progress#example-circular-size-and-width"
-          },  
-          {
-            value: false,
-            name: '回転',
-            text: "プログレスバーを進行に合わせて回転させる",
-            url: "https://vuetifyjs.com/ja/components/progress#example-circular-rotate"
           },  
         ],
         progressliner_list: [

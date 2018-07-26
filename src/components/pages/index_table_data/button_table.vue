@@ -97,6 +97,7 @@
         </td>
       </tr>
 
+
       <tr v-if="props.item.num == 13">
         <td colspan="3" style="padding:10px 0;">
           <v-toolbar dense>
@@ -171,6 +172,7 @@
           </v-toolbar>
         </td>
       </tr>
+      
     </template>
   </v-data-table>
 </template>
