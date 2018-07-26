@@ -48,23 +48,7 @@
                   」参照<br>
                   4つのバリエーション（success、info、warning、error）の設定が可能
                 </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="alert_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td><span v-html="props.item.graphic"></span></td>
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
+                <Alert/>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -78,22 +62,7 @@
                   <a href="https://vuetifyjs.com/ja/components/badges" target="_blank">v-badge</a>
                   」参照<br>
                 </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="badge_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
+                <Badge/>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -683,70 +652,19 @@
 <script>
 import ButtonTable from './index_table_data/button_table'
 import Icon from './index_table_data/icon_table'
+import Alert from './index_table_data/alert_table'
+import Badge from './index_table_data/badge_table'
 
 
   export default {
     components: {
       ButtonTable,
-      Icon
+      Icon,
+      Alert,
+      Badge
     },
     data () {
       return {
-        alert_list: [
-          {
-            value: false,
-            name: '閉じるボタン付きアラート',
-            text: "アラートに閉じるボタンをつける",
-            url: "https://vuetifyjs.com/ja/components/alerts#example-closable",
-            graphic: " <div><v-alert v-model='alert' dismissible type='success'>"
-                  + "This is a success alert that is closable."
-                  + "</v-alert>"
-          },
-          {
-            value: false,
-            name: 'アイコンの設定変更',
-            text: "アラートのアイコンの変更や削除をする",
-            url: "https://vuetifyjs.com/ja/components/alerts#example-icon"
-          },
-          {
-            value: false,
-            name: 'トランジション設定',
-            text: "アラート表示・非表示の際に、トランジションを設定する",
-            url: "https://vuetifyjs.com/ja/components/alerts#example-transition"
-          },
-          {
-            value: false,
-            name: 'アウトラインアラート',
-            text: "現在適用されている色を境界線として表示したアラート",
-            url: "https://vuetifyjs.com/ja/components/alerts#example-outline"
-          },
-        ],
-        badge_list: [
-          {
-            value: false,
-            name: '重ね合わせ',
-            text: "バッジを要素と重なるように配置する",
-            url: "https://vuetifyjs.com/ja/components/badges#example-overlap"
-          },  
-          {
-            value: false,
-            name: 'インライン',
-            text: "バッジをテキスト内に配置する",
-            url: "https://vuetifyjs.com/ja/components/badges#example-inline"
-          },  
-          {
-            value: false,
-            name: 'アイコンのバッジ化',
-            text: "アイコンをバッジとして使用する",
-            url: "https://vuetifyjs.com/ja/components/badges#example-icon"
-          },
-          {
-            value: false,
-            name: 'バッジの表示切り替え',
-            text: "バッジの表示・非表示を切り替える",
-            url: "https://vuetifyjs.com/ja/components/badges#example-visibility"
-          }, 
-        ],
         nav_list: [
          {
             value: false,

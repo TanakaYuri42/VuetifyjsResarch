@@ -8,6 +8,14 @@
   >
     <template slot="items" slot-scope="props">
 
+      <td>
+        <a :href="props.item.url" target="_blank">
+          {{ props.item.name }}
+        </a>
+      </td>
+      <td>{{ props.item.text }}</td>
+
+
       <td v-if="props.item.num == 1">
         <v-icon>fas fa-lock</v-icon>&nbsp;
         <v-icon>fas fa-tachometer-alt</v-icon>&nbsp;
@@ -28,7 +36,7 @@
         <v-btn flat icon color="red lighten-2"><v-icon>thumb_up</v-icon></v-btn>
       </td>
       <td v-else-if="props.item.num == 5">
-        &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <v-badge left color="purple">
           <v-icon slot="badge" dark small>mdi-adjust</v-icon>
           <span>test1</span>
@@ -39,12 +47,6 @@
         </v-badge>
       </td>
       
-      <td>
-        <a :href="props.item.url" target="_blank">
-          {{ props.item.name }}
-        </a>
-      </td>
-      <td>{{ props.item.text }}</td>
     </template>
   </v-data-table>
 </template>

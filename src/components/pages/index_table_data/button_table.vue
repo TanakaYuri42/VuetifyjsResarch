@@ -7,94 +7,170 @@
     hide-headers="true"
   >
     <template slot="items" slot-scope="props">
+      <tr>
+        <td>
+          <a :href="props.item.url" target="_blank">
+            {{ props.item.name }}
+          </a>
+        </td>
+        <td v-if="props.item.num == 13" colspan="2">{{ props.item.text }}</td>
+        <td v-else>{{ props.item.text }}</td>
+        
 
-      <td v-if="props.item.num == 1">
-        <v-btn flat>Flat</v-btn>
-      </td>
-      <td v-else-if="props.item.num == 2">
-        <v-btn>Raised</v-btn>
-      </td>
-      <td v-else-if="props.item.num == 3">
-        <v-btn depressed>Depressed</v-btn>
-      </td>
-      <td v-else-if="props.item.num == 4">
-        <v-overflow-btn
-          :items="dropdown_font"
-          label="Dropdown"
-          target="#dropdown-example"
-        ></v-overflow-btn>
-      </td>
-      <td v-else-if="props.item.num == 5">
-        <v-btn-toggle v-model="toggle_exclusive">
-          <v-btn flat><v-icon>format_align_left</v-icon></v-btn>
-          <v-btn flat><v-icon>format_align_center</v-icon></v-btn>
-          <v-btn flat><v-icon>format_align_right</v-icon></v-btn>
-          <v-btn flat><v-icon>format_align_justify</v-icon></v-btn>
-        </v-btn-toggle>
-        <v-divider></v-divider>
-        <v-btn-toggle v-model="toggle_multiple" multiple>
-          <v-btn flat><v-icon>format_bold</v-icon></v-btn>
-          <v-btn flat><v-icon>format_italic</v-icon></v-btn>
-          <v-btn flat><v-icon>format_underlined</v-icon></v-btn>
-          <v-btn flat><v-icon>format_color_fill</v-icon></v-btn>
-        </v-btn-toggle>
-      </td>
-      <td v-else-if="props.item.num == 6">
-        <v-btn flat icon color="pink"><v-icon>favorite</v-icon></v-btn>
-        <v-btn flat icon color="green"><v-icon>cached</v-icon></v-btn>
-        <v-btn flat icon color="deep-orange"><v-icon>thumb_up</v-icon></v-btn>
-      </td>
-      <td v-else-if="props.item.num == 7">
-        <v-btn fab dark small color="pink"></v-btn>
-        <v-btn fab dark small color="indigo"><v-icon dark>add</v-icon></v-btn>
-      </td>
-      <td v-else-if="props.item.num == 8">
-        <v-btn
-          :loading="loading"
-          :disabled="loading"
-          color="secondary"
-          @click.native="loader = 'loading'"
-        >
-          Loading
-        </v-btn>
-      </td>
-      <td v-else-if="props.item.num == 9">
-        <v-btn small color="primary" dark>S</v-btn>
-        <v-btn color="warning" dark>N</v-btn>
-        <v-btn color="error" dark large>L</v-btn>
-      </td>
-      <td v-else-if="props.item.num == 10">
-        <v-btn outline color="indigo">Outline</v-btn>
-        <v-btn outline fab small color="teal"><v-icon>list</v-icon></v-btn>
-      </td>
-      <td v-else-if="props.item.num == 11">
-        <v-btn round color="primary" dark>Rounded</v-btn>
-      </td>
-      <td v-else-if="props.item.num == 12">
-        <v-btn block color="secondary" dark>Block</v-btn>
-      </td>
-      <td v-else-if="props.item.num == 13">
-
-      </td>
-      <td v-else-if="props.item.num == 14" position: relative>
-        <v-btn
-              relative
-              dark
-              fab
-              top
-              right
-              color="pink"
-            >
-              <v-icon>add</v-icon>
+        <td v-if="props.item.num == 1">
+          <v-btn flat>Flat</v-btn>
+        </td>
+        <td v-else-if="props.item.num == 2">
+          <v-btn>Raised</v-btn>
+        </td>
+        <td v-else-if="props.item.num == 3">
+          <v-btn depressed>Depressed</v-btn>
+        </td>
+        <td v-else-if="props.item.num == 4">
+          <v-overflow-btn
+            :items="dropdown_font"
+            label="Dropdown"
+            target="#dropdown-example"
+          ></v-overflow-btn>
+        </td>
+        <td v-else-if="props.item.num == 5">
+          <v-btn-toggle v-model="toggle_exclusive">
+            <v-btn flat><v-icon>format_align_left</v-icon></v-btn>
+            <v-btn flat><v-icon>format_align_center</v-icon></v-btn>
+            <v-btn flat><v-icon>format_align_right</v-icon></v-btn>
+            <v-btn flat><v-icon>format_align_justify</v-icon></v-btn>
+          </v-btn-toggle>
+          <v-divider></v-divider>
+          <v-btn-toggle v-model="toggle_multiple" multiple>
+            <v-btn flat><v-icon>format_bold</v-icon></v-btn>
+            <v-btn flat><v-icon>format_italic</v-icon></v-btn>
+            <v-btn flat><v-icon>format_underlined</v-icon></v-btn>
+            <v-btn flat><v-icon>format_color_fill</v-icon></v-btn>
+          </v-btn-toggle>
+        </td>
+        <td v-else-if="props.item.num == 6">
+          <v-btn flat icon color="pink"><v-icon>favorite</v-icon></v-btn>
+          <v-btn flat icon color="green"><v-icon>cached</v-icon></v-btn>
+          <v-btn flat icon color="deep-orange"><v-icon>thumb_up</v-icon></v-btn>
+        </td>
+        <td v-else-if="props.item.num == 7">
+          <v-btn fab dark small color="pink"></v-btn>
+          <v-btn fab dark small color="indigo"><v-icon dark>add</v-icon></v-btn>
+        </td>
+        <td v-else-if="props.item.num == 8">
+          <v-btn
+            :loading="loading"
+            :disabled="loading"
+            color="secondary"
+            @click.native="loader = 'loading'"
+          >
+            Loading
           </v-btn>
-      </td>
+        </td>
+        <td v-else-if="props.item.num == 9">
+          <v-btn small color="primary" dark>S</v-btn>
+          <v-btn color="warning" dark>N</v-btn>
+          <v-btn color="error" dark large>L</v-btn>
+        </td>
+        <td v-else-if="props.item.num == 10">
+          <v-btn outline color="indigo">Outline</v-btn>
+          <v-btn outline fab small color="teal"><v-icon>list</v-icon></v-btn>
+        </td>
+        <td v-else-if="props.item.num == 11">
+          <v-btn round color="primary" dark>Rounded</v-btn>
+        </td>
+        <td v-else-if="props.item.num == 12">
+          <v-btn block color="secondary" dark>Block</v-btn>
+        </td>
+        <td v-else-if="props.item.num == 14" position: relative>
+          <v-btn
+                relative
+                dark
+                fab
+                top
+                right
+                color="pink"
+                style = "margin:-10px 0 20px 30px"
+              >
+                <v-icon>add</v-icon>
+            </v-btn>
+        </td>
+      </tr>
 
-      <td>
-        <a :href="props.item.url" target="_blank">
-          {{ props.item.name }}
-        </a>
-      </td>
-      <td>{{ props.item.text }}</td>
+      <tr v-if="props.item.num == 13">
+        <td colspan="3" style="padding:10px 0;">
+          <v-toolbar dense>
+            <v-overflow-btn
+              :items="dropdown_font"
+              label="Select font"
+              hide-details
+            ></v-overflow-btn>
+
+            <v-divider vertical></v-divider>
+
+            <v-overflow-btn
+              :items="dropdown_edit"
+              editable
+              label="Select size"
+              hide-details
+              overflow
+            ></v-overflow-btn>
+
+            <v-divider
+              class="mr-2"
+              vertical
+            ></v-divider>
+
+            <v-btn-toggle
+              v-model="toggle_multiple"
+              class="transparent"
+              multiple
+            >
+              <v-btn :value="1" flat>
+                <v-icon>format_bold</v-icon>
+              </v-btn>
+
+              <v-btn :value="2" flat>
+                <v-icon>format_italic</v-icon>
+              </v-btn>
+
+              <v-btn :value="3" flat>
+                <v-icon>format_underlined</v-icon>
+              </v-btn>
+
+              <v-btn :value="4" flat>
+                <v-icon>format_color_fill</v-icon>
+              </v-btn>
+            </v-btn-toggle>
+
+            <v-divider
+              class="mx-2"
+              vertical
+            ></v-divider>
+
+            <v-btn-toggle
+              v-model="toggle_exclusive"
+              class="transparent"
+            >
+              <v-btn :value="1" flat>
+                <v-icon>format_align_left</v-icon>
+              </v-btn>
+
+              <v-btn :value="2" flat>
+                <v-icon>format_align_center</v-icon>
+              </v-btn>
+
+              <v-btn :value="3" flat>
+                <v-icon>format_align_right</v-icon>
+              </v-btn>
+
+              <v-btn :value="4" flat>
+                <v-icon>format_align_justify</v-icon>
+              </v-btn>
+            </v-btn-toggle>
+          </v-toolbar>
+        </td>
+      </tr>
     </template>
   </v-data-table>
 </template>
@@ -193,21 +269,32 @@
           },
           {
             value: false,
-            num: 13,
-            name: 'ツールバーとの組み合わせ',
-            text: "ツールバーにボタンを入れる",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-app-bar"
-          },
-          {
-            value: false,
             num: 14,
             name: 'フローティングアクションボタン',
             text: "浮いているボタン。ユーザーにアクションを促すのによく使われる",
             url: "https://vuetifyjs.com/ja/components/floating-action-buttons"
           },
+          {
+            value: false,
+            num: 13,
+            name: 'ツールバーとの組み合わせ',
+            text: "ツールバーにボタンを入れる",
+            url: "https://vuetifyjs.com/ja/components/buttons#example-app-bar"
+          },
         ],
-        dropdown_font: ['test1', 'test2', 'test3'],
-        dropdown_edit: [{ text: 'Yes' },{ text: 'No' },],
+        dropdown_font: [
+          { text: 'Arial' },
+          { text: 'Calibri' },
+          { text: 'Courier' },
+          { text: 'Verdana' }
+        ],
+        dropdown_edit: [
+          { text: '100%' },
+          { text: '75%' },
+          { text: '50%' },
+          { text: '25%' },
+          { text: '0%' }
+        ],
         toggle_none: null,
         toggle_one: 0,
         toggle_exclusive: 2,
