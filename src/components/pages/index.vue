@@ -18,10 +18,7 @@
                     <a href="https://vuetifyjs.com/ja/components/buttons" target="_blank">v-btn</a>
                     」参照
                   </div>
-
                   <ButtonTable/>
-
-                  
                 </v-card-text>
               </v-card>
           </v-expansion-panel-content>
@@ -36,22 +33,7 @@
                   」参照<br>
                   テーマ（light,dark）と、サイズ（standard、medium、large、x-large）の設定が可能
                 </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="icon_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
+                <Icon/>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -700,139 +682,16 @@
 
 <script>
 import ButtonTable from './index_table_data/button_table'
+import Icon from './index_table_data/icon_table'
+
 
   export default {
     components: {
       ButtonTable,
+      Icon
     },
     data () {
       return {
-      button_list: [
-          {
-            value: false,
-            name: "フラットボタン",
-            text: "影と背景色を持たないボタン。カーソルを合わせると背景が浮かび上がる",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-flat",
-            graphic: "<v-btn flat small>Normal</v-btn>"
-          },
-          {
-            value: false,
-            name: 'レイズドボタン',
-            text: "クリックした時に影が広がるボタン",
-            url:"https://vuetifyjs.com/ja/components/buttons#example-raised",
-            graphic: "<v-btn small>Normal</v-btn>"
-          },
-          {
-            value: false,
-            name: 'ディプレスドボタン',
-            text: "背景色は持つが、影は持たないボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-depressed",
-          },
-          {
-            value: false,
-            name: 'ドロップダウンボタン',
-            text: "クリックするとリストを表示できるボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-dropdown",
-          },
-          {
-            value: false,
-            name: 'トグルボタン',
-            text: "ラジオボタンやチェックボックスの作成",
-            url:"https://vuetifyjs.com/ja/components/buttons#example-toggle"
-          },
-          {
-            value: false,
-            name: 'アイコンのボタン化',
-            text: "アイコンをボタンとして使用する",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-icon",
-          },
-          {
-            value: false,
-            name: 'フローティングボタン',
-            text: "丸いボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-floating"
-          },
-          {
-            value: false,
-            name: 'ローディング',
-            text: "クリックすると、処理中であることを表示するボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-loaders"
-          },
-          {
-            value: false,
-            name: 'サイズ変更',
-            text: "smallやlargeなど、ボタンのサイズを変更する",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-sizing"
-          },
-          {
-            value: false,
-            name: 'アウトラインボタン',
-            text: "現在適用されている色を境界線として表示したボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-outline"
-          },
-          {
-            value: false,
-            name: 'ラウンドボタン',
-            text: "角が丸くなったボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-round"
-          },
-          {
-            value: false,
-            name: 'ブロックボタン',
-            text: "可能な限り横に広がったボタン",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-block"
-          },
-          {
-            value: false,
-            name: 'ツールバーとの組み合わせ',
-            text: "ツールバーにボタンを入れる",
-            url: "https://vuetifyjs.com/ja/components/buttons#example-app-bar"
-          },
-          {
-            value: false,
-            name: 'フローティングアクションボタン',
-            text: "ユーザーにアクションを促すためのボタン",
-            url: "https://vuetifyjs.com/ja/components/floating-action-buttons"
-          },
-        ],
-        icon_list: [
-          {
-            value: false,
-            name: 'Font Awesome',
-            text: "Font AwesomeのWebアイコンフォント",
-            url: "https://vuetifyjs.com/ja/components/icons#example-font-awesome"
-          },
-          {
-            value: false,
-            name: 'Material Design Icons',
-            text: "Material Design IconsのWebアイコンフォント",
-            url: "https://vuetifyjs.com/ja/components/icons#example-mdi"
-          },
-          {
-            value: false,
-            name: '色変更',
-            text: "アイコンの色を変更する",
-            url: "https://vuetifyjs.com/ja/components/icons#example-color"
-          },
-          {
-            value: false,
-            name: 'アイコンとボタン',
-            text: "ボタンとアイコンを融合したり、アイコンをボタンとして使用したりする",
-            url: "https://vuetifyjs.com/ja/components/icons#example-buttons"
-          },
-          {
-            value: false,
-            name: 'アイコンのバッジ化',
-            text: "アイコンをバッジとして使用する",
-            url: "https://vuetifyjs.com/ja/components/badges#example-icon"
-          }, 
-          {
-            value: false,
-            name: 'クリックイベント時のカーソル変更',
-            text: "クリックイベントをv-iconと結ぶことで、自動的にカーソルをポインタに変更する",
-            url: "https://vuetifyjs.com/ja/components/icons#example-clickable"
-          },
-        ],
         alert_list: [
           {
             value: false,
