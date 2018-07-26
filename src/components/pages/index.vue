@@ -11,33 +11,21 @@
         >
           <v-expansion-panel-content>
             <div slot="header">ボタン</div>
-            <v-card>
-              <v-card-text>
-                <div>
-                  基本的な概要は「
-                  <a href="https://vuetifyjs.com/ja/components/buttons" target="_blank">v-btn</a>
-                  」参照
-                </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="button_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
+              <v-card>
+                <v-card-text>
+                  <div>
+                    基本的な概要は「
+                    <a href="https://vuetifyjs.com/ja/components/buttons" target="_blank">v-btn</a>
+                    」参照
+                  </div>
 
+                  <ButtonTable/>
+
+                  
+                </v-card-text>
+              </v-card>
+          </v-expansion-panel-content>
+          
           <v-expansion-panel-content>
             <div slot="header">アイコン</div>
             <v-card>
@@ -86,6 +74,7 @@
                   hide-headers="true"
                 >
                   <template slot="items" slot-scope="props">
+                      <td><span v-html="props.item.graphic"></span></td>
                       <td>
                         <a :href="props.item.url" target="_blank">
                           {{ props.item.name }}
@@ -710,7 +699,12 @@
 </template>
 
 <script>
+import ButtonTable from './index_table_data/button_table'
+
   export default {
+    components: {
+      ButtonTable,
+    },
     data () {
       return {
       button_list: [
@@ -719,12 +713,14 @@
             name: "フラットボタン",
             text: "影と背景色を持たないボタン。カーソルを合わせると背景が浮かび上がる",
             url: "https://vuetifyjs.com/ja/components/buttons#example-flat",
+            graphic: "<v-btn flat small>Normal</v-btn>"
           },
           {
             value: false,
             name: 'レイズドボタン',
             text: "クリックした時に影が広がるボタン",
             url:"https://vuetifyjs.com/ja/components/buttons#example-raised",
+            graphic: "<v-btn small>Normal</v-btn>"
           },
           {
             value: false,
@@ -842,7 +838,10 @@
             value: false,
             name: '閉じるボタン付きアラート',
             text: "アラートに閉じるボタンをつける",
-            url: "https://vuetifyjs.com/ja/components/alerts#example-closable"
+            url: "https://vuetifyjs.com/ja/components/alerts#example-closable",
+            graphic: " <div><v-alert v-model='alert' dismissible type='success'>"
+                  + "This is a success alert that is closable."
+                  + "</v-alert>"
           },
           {
             value: false,

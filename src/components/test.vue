@@ -9,26 +9,14 @@
 
 <script>
 import Button from './pages/button'
-import Icon from './pages/icon'
-import Stepper from './pages/stepper'
-import Clock from './pages/clock'
 import Comment from './pages/comment'
-import Calender from './pages/calender'
-import Iterator from './pages/iterator'
-import Itiran from './pages/itiran'
 import Index from './pages/index'
 
 export default {
   name: 'Test',
   components: {
     Button,
-    Icon,
-    Stepper,
-    Clock,
     Comment,
-    Calender,
-    Iterator,
-    Itiran,
     Index
   },
   props: {
