@@ -148,13 +148,6 @@
   }
 </script>
 
-<style scoped>
-h2 {
-  text-align:center;
-  margin-top:40px;
-  background-color:#B2EBF2;
-}
-</style>
 
 <style scoped>
 h2 {

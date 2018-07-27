@@ -295,22 +295,7 @@
                   」参照<br>
                   シンプルなダイアログの見本は<a href="https://vuetifyjs.com/ja/components/dialogs#example-advanced" target="_blank">こちら</a>
                 </div>
-                <v-data-table
-                  :headers="headers"
-                  :items="dialog_list"
-                  hide-actions
-                  class="elevation-1" 
-                  hide-headers="true"
-                >
-                  <template slot="items" slot-scope="props">
-                      <td>
-                        <a :href="props.item.url" target="_blank">
-                          {{ props.item.name }}
-                        </a>
-                      </td>
-                    <td>{{ props.item.text }}</td>
-                  </template>
-                </v-data-table>
+                <Dialog/>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -582,6 +567,36 @@
                   」参照<br>
                   ユーザーに対して、短いメッセージを表示する。実装に合わせて色の変更も可能
                 </div>
+                <div>
+                   <v-btn
+                    block
+                    color="primary"
+                    dark
+                    @click="snackbar = true"
+                  >
+                    Click me!
+                  </v-btn>
+
+                  <v-snackbar
+                    v-model="snackbar"
+                    :bottom="y === 'bottom'"
+                    :left="x === 'left'"
+                    :multi-line="mode === 'multi-line'"
+                    :right="x === 'right'"
+                    :timeout="timeout"
+                    :top="y === 'top'"
+                    :vertical="mode === 'vertical'"
+                  >
+                    {{ text }}
+                    <v-btn
+                      color="pink"
+                      flat
+                      @click="snackbar = false"
+                    >
+                      Close
+                    </v-btn>
+                  </v-snackbar>
+                </div>
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -614,6 +629,37 @@
                   」参照<br>
                   スクリーンの下部からスライドするように表示されるシート
                 </div>
+                <div>
+                  <v-bottom-sheet v-model="sheet">
+                    <v-btn
+                      slot="activator"
+                      color="purple"
+                      dark
+                    >
+                      Click me
+                    </v-btn>
+
+                    <v-list>
+                      <v-subheader>Open in</v-subheader>
+                      <v-list-tile
+                        v-for="tile in tiles"
+                        :key="tile.title"
+                        @click="sheet = false"
+                      >
+                        <v-list-tile-avatar>
+                          <v-avatar size="32px" tile>
+                            <img
+                              :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
+                              :alt="tile.title"
+                            >
+                          </v-avatar>
+                        </v-list-tile-avatar>
+                        <v-list-tile-title>{{ tile.title }}</v-list-tile-title>
+                      </v-list-tile>
+                    </v-list>
+                  </v-bottom-sheet>
+                </div>
+
               </v-card-text>
             </v-card>
           </v-expansion-panel-content>
@@ -679,6 +725,7 @@ import Badge from './index_table_data/badge_table'
 import Chip from './index_table_data/chip_table'
 import ProgressC from './index_table_data/progress_c_table'
 import ProgressL from './index_table_data/progress_l_table'
+import Dialog from './index_table_data/dialog_table'
 
   export default {
     components: {
@@ -688,7 +735,8 @@ import ProgressL from './index_table_data/progress_l_table'
       Badge,
       Chip,
       ProgressC,
-      ProgressL
+      ProgressL,
+      Dialog
     },
     data () {
       return {
@@ -728,38 +776,6 @@ import ProgressL from './index_table_data/progress_l_table'
             text: "リンクオプション有り。上記のナビゲーション等と組み合わせやすい",
             url: "https://vuetifyjs.com/ja/components/lists"
           }, 
-        ],
-        dialog_list: [
-          {
-            value: false,
-            name: 'モーダル',
-            text: "ダイアログ画面外をクリックしても、閉じないようにする",
-            url: "https://vuetifyjs.com/ja/components/dialogs#example-modal"
-          }, 
-          {
-            value: false,
-            name: 'フォーム',
-            text: "ダイアログ画面にフォーム（form）を取り入れる",
-            url: "https://vuetifyjs.com/ja/components/dialogs#example-form"
-          },  
-          {
-            value: false,
-            name: 'スクロール',
-            text: "ダイアログ画面内でスクロールできるようにする",
-            url: "https://vuetifyjs.com/ja/components/dialogs#example-scrollable"
-          }, 
-          {
-            value: false,
-            name: 'オーバーフロー',
-            text: "ウィンドウ画面に収まらないダイアログ画面はスクロールする",
-            url: "https://vuetifyjs.com/ja/components/dialogs#example-overflowed"
-          }, 
-          {
-            value: false,
-            name: 'ローディング',
-            text: "処理中であることをダイアログで表示する",
-            url: "https://vuetifyjs.com/ja/components/dialogs#example-loader"
-          },  
         ],
         jumbotron_list: [
           {
@@ -1203,6 +1219,20 @@ import ProgressL from './index_table_data/progress_l_table'
         ],
         slider: 56,
         tile: false,
+         snackbar: false,
+        y: 'top',
+        x: null,
+        mode: '',
+        timeout: 6000,
+        text: 'Hello, I\'m a snackbar',
+        sheet: false,
+        tiles: [
+          { img: 'keep.png', title: 'Keep' },
+          { img: 'inbox.png', title: 'Inbox' },
+          { img: 'hangouts.png', title: 'Hangouts' },
+          { img: 'messenger.png', title: 'Messenger' },
+          { img: 'google.png', title: 'Google+' }
+        ]
       }
     },
     computed: {
