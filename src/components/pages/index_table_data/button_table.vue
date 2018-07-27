@@ -33,14 +33,14 @@
             target="#dropdown-example"
           ></v-overflow-btn>
         </td>
-        <td v-else-if="props.item.num == 5">
-          <v-btn-toggle v-model="toggle_exclusive">
+
+        <td v-else-if="props.item.num == 5" style="padding:10px 25px;">
+          <v-btn-toggle v-model="toggle_exclusive" style="margin-bottom:5px">
             <v-btn flat><v-icon>format_align_left</v-icon></v-btn>
             <v-btn flat><v-icon>format_align_center</v-icon></v-btn>
             <v-btn flat><v-icon>format_align_right</v-icon></v-btn>
             <v-btn flat><v-icon>format_align_justify</v-icon></v-btn>
           </v-btn-toggle>
-          <v-divider></v-divider>
           <v-btn-toggle v-model="toggle_multiple" multiple>
             <v-btn flat><v-icon>format_bold</v-icon></v-btn>
             <v-btn flat><v-icon>format_italic</v-icon></v-btn>
