@@ -478,22 +478,7 @@
               </a>
               」参照<br>
             </div>
-            <v-data-table
-              :headers="headers"
-              :items="tab_list"
-              hide-actions
-              class="elevation-1" 
-              hide-headers="true"
-            >
-              <template slot="items" slot-scope="props">
-                  <td>
-                    <a :href="props.item.url" target="_blank">
-                      {{ props.item.name }}
-                    </a>
-                  </td>
-                <td>{{ props.item.text }}</td>
-              </template>
-            </v-data-table>
+            <Tabs/>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -623,9 +608,7 @@
               」参照<br>
               画像をウィンドウよりも遅くスクロールすることで3Dエフェクトを作成する
             </div>
-            <div>
-              <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-parallax>
-            </div>
+
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -714,22 +697,7 @@
               」参照<br>
               ユーザーが番号付きのステップを経て、操作を進行するための画面
             </div>
-            <v-data-table
-              :headers="headers"
-              :items="stepper_list"
-              hide-actions
-              class="elevation-1" 
-              hide-headers="true"
-            >
-              <template slot="items" slot-scope="props">
-                  <td>
-                    <a :href="props.item.url" target="_blank">
-                      {{ props.item.name }}
-                    </a>
-                  </td>
-                <td>{{ props.item.text }}</td>
-              </template>
-            </v-data-table>
+            <Stepper/>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -750,6 +718,8 @@ import ProgressL from './index_table_data/progress_l_table'
 import Dialog from './index_table_data/dialog_table'
 import Pagination from './index_table_data/pagination_table'
 import Panel from './index_table_data/panel_table'
+import Tabs from './index_table_data/tabs_table'
+import Stepper from './index_table_data/stepper_table'
 
   export default {
     components: {
@@ -762,7 +732,9 @@ import Panel from './index_table_data/panel_table'
       ProgressL,
       Dialog,
       Pagination,
-      Panel
+      Panel,
+      Tabs,
+      Stepper
     },
     data () {
       return {
@@ -861,68 +833,6 @@ import Panel from './index_table_data/panel_table'
             name: 'Time picker（時計）',
             text: "時間を選択するための時計を表示する",
             url: "https://vuetifyjs.com/ja/components/time-pickers"
-          },  
-        ],
-        tab_list: [
-          {
-            value: false,
-            name: '固定タブ',
-            text: "より大きい最小幅を設定して適応したタブ",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-fixed-tabs"
-          },  
-          {
-            value: false,
-            name: '右揃え',
-            text: "右揃えに並べたタブ",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-right"
-          },  
-          {
-            value: false,
-            name: 'コンテンツ',
-            text: "タブ内に他コンテンツ（ツールバーなど）を取り入れる",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-content"
-          },  
-          {
-            value: false,
-            name: '検索機能',
-            text: "タブ内に検索機能を取り入れる",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-search"
-          },  
-          {
-            value: false,
-            name: 'アイコンとテキスト',
-            text: "タブをアイコンとテキストで表示する",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-icons-and-text"
-          },  
-          {
-            value: false,
-            name: 'タブとツールバーの整列',
-            text: "タブをツールバーのタイトルと並べる",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-align-with-title"
-          },  
-          {
-            value: false,
-            name: '最大幅での表示',
-            text: "利用可能な領域を全て使ってタブを表示する",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-grow"
-          },  
-          {
-            value: false,
-            name: 'メニュー付き',
-            text: "タブの中にメニューをつけて、追加のタブを表示する",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-overflow-to-menu"
-          }, 
-          {
-            value: false,
-            name: 'ページネーション',
-            text: "タブ数が親コンテンツを越えた時、ページネーション表示にする",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-pagination"
-          },  
-          {
-            value: false,
-            name: 'ページネーションにアイコン付加',
-            text: "ページネーションのページ移動のボタンをアイコンにする",
-            url: "https://vuetifyjs.com/ja/components/tabs#example-icons"
           },  
         ],
         toolbar_list: [
@@ -1095,68 +1005,6 @@ import Panel from './index_table_data/panel_table'
             name: 'イテレータ',
             text: "テーブルと似ているコンポーネント。データの表示を細かくカスタマイズできる",
             url: "https://vuetifyjs.com/ja/components/data-iterator"
-          },  
-        ],
-        stepper_list: [
-          {
-            value: false,
-            name: '編集可能なステップ',
-            text: "編集可能なステップなら、ユーザーの選択で移動できる",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-editable"
-          },  
-          {
-            value: false,
-            name: '編集不可能なステップ',
-            text: "ユーザーの選択で移動することはできず、ステップは直線的に進行する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-non-editable"
-          },  
-          {
-            value: false,
-            name: 'オプションステップ',
-            text: "サブテキストを読み込む",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-optional"
-          },  
-          {
-            value: false,
-            name: '水平ステップ',
-            text: "定義されたステップを経て、x軸に沿って進行する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-horizontal"
-          }, 
-          {
-            value: false,
-            name: '垂直ステップ',
-            text: "定義されたステップを経て、y軸に沿って進行する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-vertical"
-          },  
-          {
-            value: false,
-            name: 'リニアステップ',
-            text: "常に定義されたステップで進行する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-linear"
-          },  
-          {
-            value: false,
-            name: '非リニアステップ',
-            text: "ユーザーが選択した順番でステップが進行する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-non-linear"
-          },  
-          {
-            value: false,
-            name: 'エラー表示',
-            text: "エラーが起きた際に、それを表示する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-error"
-          },  
-          {
-            value: false,
-            name: '代替ラベルによるエラー表示',
-            text: "エラー状態を代替ラベルスタイルに適用する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-alternate-error"
-          },  
-          {
-            value: false,
-            name: 'ダイナミックなステップ',
-            text: "ユーザーの操作で、動的にステップを追加・削除する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-dynamic"
           },  
         ],
         card_list: [

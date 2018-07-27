@@ -22,7 +22,7 @@
             v-model="alert"
             dismissible
             type="success"
-            style="margin:10px 0 20px 0"
+            class="mt-3 mb-3"
           >
             This is a success alert that is closable.
           </v-alert>
@@ -43,7 +43,7 @@
             :value="true"
             color="success"
             icon="new_releases"
-            style="margin-top:10px"
+            class="mt-3"
           >
             This is a success alert with a custom icon.
           </v-alert>
@@ -51,7 +51,7 @@
           <v-alert
             :value="true"
             color="error"
-            style="margin-bottom:20px"
+            class="mb-3"
           >
             This is an error alert with no icon.
           </v-alert>
@@ -62,7 +62,7 @@
             <v-btn
               color="primary"
               @click="alert = !alert"
-              style="margin-top:10px"
+              class="mt-3"
             >
               Toggle
             </v-btn>
@@ -71,7 +71,7 @@
             :value="alert"
             type="info"
             transition="scale-transition"
-            style="margin-bottom:20px"
+            class="mb-3"
           >
             This is a info alert.
           </v-alert>
@@ -83,7 +83,7 @@
             color="warning"
             icon="warning"
             outline
-            style="margin:10px 0 20px 0"
+            class="mt-3 mb-3"
           >
             This is an outline alert.
           </v-alert>

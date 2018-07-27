@@ -39,16 +39,16 @@
               タグの入れ子関係
           </v-card-title>
           <v-card-text>
-              &lt;v-app&gt;<br>
-              ␣␣&lt;v-navigation-drawer app&gt;&lt;/v-navigation-drawer&gt;<br>
-              ␣␣&lt;v-toolbar app&gt;&lt;/v-toolbar&gt;<br>
-              ␣␣&lt;v-content&gt;<br>
-              ␣␣␣␣&lt;v-container fluid&gt;<br>
-              ␣␣␣␣␣␣&lt;router-view&gt;&lt;/router-view&gt;<br>
-              ␣␣␣␣&lt;/v-container&gt;<br>
-              ␣␣&lt;/v-content&gt;<br>
-              ␣␣&lt;v-footer app&gt;&lt;/v-footer&gt;<br>
-              &lt;/v-app&gt;<br>
+            &lt;v-app&gt;<br>
+            &nbsp;&nbsp;&lt;v-navigation-drawer app&gt;&lt;/v-navigation-drawer&gt;<br>
+            &nbsp;&nbsp;&lt;v-toolbar app&gt;&lt;/v-toolbar&gt;<br>
+            &nbsp;&nbsp;&lt;v-content&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;v-container fluid&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;router-view&gt;&lt;/router-view&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/v-container&gt;<br>
+            &nbsp;&nbsp;&lt;/v-content&gt;<br>
+            &nbsp;&nbsp;&lt;v-footer app&gt;&lt;/v-footer&gt;<br>
+            &lt;/v-app&gt;<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -60,12 +60,12 @@
           </v-card-title>
           <v-card-text>
               v-app<br>
-              ␣␣v-navigation-drawer(app)<br>
-              ␣␣v-toolbar(app)<br>
-              ␣␣v-content<br>
-              ␣␣␣␣v-container(fluid)<br>
-              ␣␣␣␣␣␣router-view<br>
-              ␣␣v-footer(app)<br>
+              &nbsp;&nbsp;v-navigation-drawer(app)<br>
+              &nbsp;&nbsp;v-toolbar(app)<br>
+              &nbsp;&nbsp;v-content<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;v-container(fluid)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;router-view<br>
+              &nbsp;&nbsp;v-footer(app)<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -113,9 +113,9 @@
           </v-card-title>
           <v-card-text>
               &lt;v-container fluid&gt;<br>
-              ␣␣&lt;v-layout&gt;<br>
-              ␣␣␣␣&lt;v-flex&gt;&lt;/v-flex&gt;<br>
-              ␣␣&lt;/v-layout&gt;<br>
+              &nbsp;&nbsp;&lt;v-layout&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;v-flex&gt;&lt;/v-flex&gt;<br>
+              &nbsp;&nbsp;&lt;/v-layout&gt;<br>
               &lt;/v-container&gt;<br>
           </v-card-text>
         </v-card>   
@@ -128,8 +128,8 @@
           </v-card-title>
           <v-card-text>
               v-container(fluid)<br>
-              ␣␣v-layout<br>
-              ␣␣␣␣v-flex<br>
+              &nbsp;&nbsp;v-layout<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;v-flex<br>
           </v-card-text>
         </v-card>   
       </v-flex>
@@ -199,12 +199,12 @@
           </v-card-title>
           <v-card-text>
             v-flex(xs12 sm6)<br>
-            ␣␣v-card(height="400px")<br>
-            ␣␣␣␣v-card-media(src="URL" height="200px")<br>
-            ␣␣␣␣v-card-title タイトル：v-card-title<br>
-            ␣␣␣␣v-card-text 本文：v-card-text<br>
-            ␣␣␣␣v-card-actions<br>
-            ␣␣␣␣␣␣v-btn(color="blue lighten-4")<br>
+            &nbsp;&nbsp;v-card(height="400px")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;v-card-media(src="URL" height="200px")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;v-card-title タイトル：v-card-title<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;v-card-text 本文：v-card-text<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;v-card-actions<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v-btn(color="blue lighten-4")<br>
           </v-card-text>
         </v-card>   
       </v-flex>
