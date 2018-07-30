@@ -120,22 +120,7 @@
               </a>
               」参照<br>
             </div>
-            <v-data-table
-              :headers="headers"
-              :items="toolbar_list"
-              hide-actions
-              class="elevation-1" 
-              hide-headers="true"
-            >
-              <template slot="items" slot-scope="props">
-                  <td>
-                    <a :href="props.item.url" target="_blank">
-                      {{ props.item.name }}
-                    </a>
-                  </td>
-                <td>{{ props.item.text }}</td>
-              </template>
-            </v-data-table>
+            <Toolbar/>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -692,6 +677,7 @@ import Tabs from './index_table_data/tabs_table'
 import Stepper from './index_table_data/stepper_table'
 import Card from './index_table_data/card_table'
 import Table from './index_table_data/table_table'
+import Toolbar from './index_table_data/toolbar_table'
 
   export default {
     components: {
@@ -709,6 +695,7 @@ import Table from './index_table_data/table_table'
       Stepper,
       Card,
       Table,
+      Toolbar,
     },
     data () {
       return {
