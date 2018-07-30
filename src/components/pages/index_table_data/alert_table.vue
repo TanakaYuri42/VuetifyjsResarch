@@ -16,7 +16,7 @@
         <td>{{ props.item.text }}</td>
       </tr>
 
-      <tr class="tr-bottom">    
+      <tr>
         <td v-if="props.item.num == 1" colspan="2">
           <v-alert
             v-model="alert"
@@ -90,7 +90,6 @@
         </td>
         
       </tr>
-
     </template>
   </v-data-table>
 </template>
