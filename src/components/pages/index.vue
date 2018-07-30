@@ -181,22 +181,7 @@
               」参照<br>
               表形式でデータ表示。ソート、検索、ページネーション、編集、行選択などの機能を含んでいる
             </div>
-            <v-data-table
-              :headers="headers"
-              :items="table_list"
-              hide-actions
-              class="elevation-1" 
-              hide-headers="true"
-            >
-              <template slot="items" slot-scope="props">
-                  <td>
-                    <a :href="props.item.url" target="_blank">
-                      {{ props.item.name }}
-                    </a>
-                  </td>
-                <td>{{ props.item.text }}</td>
-              </template>
-            </v-data-table>
+            <Table/>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -269,22 +254,7 @@
               」参照<br>
               パネルや画像表示など、あらゆる用途に使用できる汎用的なコンポーネント<br>
             </div>
-            <v-data-table
-              :headers="headers"
-              :items="card_list"
-              hide-actions
-              class="elevation-1" 
-              hide-headers="true"
-            >
-              <template slot="items" slot-scope="props">
-                  <td>
-                    <a :href="props.item.url" target="_blank">
-                      {{ props.item.name }}
-                    </a>
-                  </td>
-                <td>{{ props.item.text }}</td>
-              </template>
-            </v-data-table>
+            <Card/>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -720,6 +690,8 @@ import Pagination from './index_table_data/pagination_table'
 import Panel from './index_table_data/panel_table'
 import Tabs from './index_table_data/tabs_table'
 import Stepper from './index_table_data/stepper_table'
+import Card from './index_table_data/card_table'
+import Table from './index_table_data/table_table'
 
   export default {
     components: {
@@ -734,7 +706,9 @@ import Stepper from './index_table_data/stepper_table'
       Pagination,
       Panel,
       Tabs,
-      Stepper
+      Stepper,
+      Card,
+      Table,
     },
     data () {
       return {
@@ -833,204 +807,6 @@ import Stepper from './index_table_data/stepper_table'
             name: 'Time picker（時計）',
             text: "時間を選択するための時計を表示する",
             url: "https://vuetifyjs.com/ja/components/time-pickers"
-          },  
-        ],
-        toolbar_list: [
-          {
-            value: false,
-            name: 'アプリケーションバー',
-            text: "アプリケーションの主要なツールバー。アイコンやメニューの追加可能",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar"
-          },  
-          {
-            value: false,
-            name: 'ボタンを使用したアプリケーションバー',
-            text: "ボタンをアプリケーション項目として追加する",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar-items"
-          },  
-          {
-            value: false,
-            name: '拡張機能付き',
-            text: "拡張機能を追加したアプリケーションバー",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar-extension"
-          },  
-          {
-            value: false,
-            name: '幅を階層化する',
-            text: "ツールバーの幅を階層化する",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-column-width-with-hierarchy"
-          },
-          {
-            value: false,
-            name: '柔軟なツールバー',
-            text: "カード（v-card）を含めるなど、ツールバーを柔軟にカスタムする",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-flexible-and-card"
-          },  
-          {
-            value: false,
-            name: '検索付きフローティングツールバー',
-            text: "検索機能をつけて、参照するコンテンツ上にツールバーを設置する",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-floating-with-search"
-          },  
-          {
-            value: false,
-            name: 'バリエーション',
-            text: "テーマやヘルパークラスなど、バリエーションを設定する",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-variations"
-          },  
-          {
-            value: false,
-            name: '主要なツールバー',
-            text: "拡張領域に、要素を配置できるスロットを追加する",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-prominent"
-          },  
-          {
-            value: false,
-            name: '高密度のツールバー',
-            text: "高さを48pxに減らす",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-dense"
-          },  
-          {
-            value: false,
-            name: 'スクロール',
-            text: "スクロールする時に、ツールバーを画面から切り替える",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-scrolling"
-          },  
-          {
-            value: false,
-            name: 'メニュー付きアプリケーションバー',
-            text: "アプリケーションバーにメニューをつける",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-app-bar-menu"
-          }, 
-          {
-            value: false,
-            name: 'システムバー',
-            text: "システムバーを作成する",
-            url: "https://vuetifyjs.com/ja/components/toolbars#example-system-bars-status-window"
-          },  
-        ],
-        table_list: [
-          {
-            value: false,
-            name: 'データがない時の設定',
-            text: "データが存在しない時に表示するhtmlを設定する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-no-data"
-          }, 
-          {
-            value: false,
-            name: 'ヘッダーのセルごとの共通設定',
-            text: "ヘッダーのセルごとに共通のマークアップやエフェクトを設定する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-header-cell"
-          }, 
-          {
-            value: false,
-            name: 'プログレスバー',
-            text: "データをロードしている時にプログレスバーを表示する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-progress"
-          }, 
-          {
-            value: false,
-            name: 'フッター',
-            text: "テーブルのフッター。カラムのフィルタや検索など、テーブルに拡張機能を持たせたい時に使う",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-footer"
-          },
-          {
-            value: false,
-            name: '行の折りたたみ',
-            text: "行を選択した際に、行の開閉をできるようにする",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-expand"
-          },  
-          {
-            value: false,
-            name: 'ページネーションの編集',
-            text: "ページネーションで使用されるテキストを変更する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-page-text"
-          },  
-          {
-            value: false,
-            name: '行の選択',
-            text: "行を選択可能にして、行に対してアクションを実行できる",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-select"
-          },  
-          {
-            value: false,
-            name: '行の検索',
-            text: "検索機能をつける",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-search"
-          },  
-          {
-            value: false,
-            name: 'アイコン',
-            text: "ページネーションで、ページ移動のボタンをアイコンにする",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-custom-icons"
-          },  
-          {
-            value: false,
-            name: '外部ページネーション',
-            text: "テーブル外部からページネーションを制御する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-paginate"
-          },  
-          {
-            value: false,
-            name: '外部ソート',
-            text: "テーブル外部からソートを制御する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-sort"
-          },  
-          {
-            value: false,
-            name: 'サーバサイドからのページネーション・ソート',
-            text: "バックエンドから情報を読み込み、結果を表示する前にページネーションやソートを適用する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-server"
-          },  
-          {
-            value: false,
-            name: 'ヘッダーの非表示',
-            text: "ヘッダーなしのテーブルを作成する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-headerless"
-          },  
-          {
-            value: false,
-            name: 'インライン編集',
-            text: "テーブル内部でインライン編集する",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-editdialog"
-          },  
-          {
-            value: false,
-            name: '各行の編集',
-            text: "行の新規追加・編集・削除をする",
-            url: "https://vuetifyjs.com/ja/components/data-tables#example-crud"
-          },  
-          {
-            value: false,
-            name: 'イテレータ',
-            text: "テーブルと似ているコンポーネント。データの表示を細かくカスタマイズできる",
-            url: "https://vuetifyjs.com/ja/components/data-iterator"
-          },  
-        ],
-        card_list: [
-          {
-            value: false,
-            name: 'テキスト付きメディア',
-            text: "画像上などの、背景にテキストを表示する",
-            url: "https://vuetifyjs.com/ja/components/cards#example-media-with-text"
-          },  
-          {
-            value: false,
-            name: '水平型カード',
-            text: "水平型にカスタマイズされたカード",
-            url: "https://vuetifyjs.com/ja/components/cards#example-horizontal"
-          },  
-          {
-            value: false,
-            name: 'グリッドリスト',
-            text: "グリッドを使って、カードのレイアウトを整える",
-            url: "https://vuetifyjs.com/ja/components/cards#example-grids"
-          },  
-          {
-            value: false,
-            name: '開閉可能なテキストの追加',
-            text: "選択するまで閉じられた状態の補助的なテキストを追加する",
-            url: "https://vuetifyjs.com/ja/components/cards#example-custom-actions"
           },  
         ],
         slider: 56,
