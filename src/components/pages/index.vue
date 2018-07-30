@@ -150,9 +150,137 @@
                 <td>{{ props.item.text }}</td>
               </template>
             </v-data-table>
+            <div class="mt-3">
+              <v-layout row>
+                <v-flex xs12 sm6 class="mr-1">
+                  <v-card style="border:solid 1px #ddd;height:546px">
+                    <v-card-media
+                      src="https://cdn.vuetifyjs.com/images/lists/ali.png"
+                      height="300px"
+                    >
+                      <v-layout
+                        column
+                        fill-height
+                      >
+                        <v-card-title>
+                          <v-btn dark icon>
+                            <v-icon>chevron_left</v-icon>
+                          </v-btn>
+
+                          <v-spacer></v-spacer>
+
+                          <v-btn dark icon class="mr-3">
+                            <v-icon>edit</v-icon>
+                          </v-btn>
+
+                          <v-btn dark icon>
+                            <v-icon>more_vert</v-icon>
+                          </v-btn>
+                        </v-card-title>
+
+                        <v-spacer></v-spacer>
+
+                        <v-card-title class="white--text pl-5 pt-5">
+                          <div class="display-1 pl-5 pt-5">Ali Conners</div>
+                        </v-card-title>
+                      </v-layout>
+                    </v-card-media>
+
+                    <v-list two-line>
+                      <v-list-tile>
+                        <v-list-tile-action>
+                          <v-icon color="indigo">phone</v-icon>
+                        </v-list-tile-action>
+
+                        <v-list-tile-content>
+                          <v-list-tile-title>(650) 555-1234</v-list-tile-title>
+                          <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
+                        </v-list-tile-content>
+
+                        <v-list-tile-action>
+                          <v-icon>chat</v-icon>
+                        </v-list-tile-action>
+                      </v-list-tile>
+
+                      <v-divider inset></v-divider>
+
+                      <v-list-tile>
+                        <v-list-tile-action>
+                          <v-icon color="indigo">mail</v-icon>
+                        </v-list-tile-action>
+
+                        <v-list-tile-content>
+                          <v-list-tile-title>aliconnors@example.com</v-list-tile-title>
+                          <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+
+                      <v-divider inset></v-divider>
+
+                      <v-list-tile>
+                        <v-list-tile-action>
+                          <v-icon color="indigo">location_on</v-icon>
+                        </v-list-tile-action>
+
+                        <v-list-tile-content>
+                          <v-list-tile-title>1400 Main Street</v-list-tile-title>
+                          <v-list-tile-sub-title>Orlando, FL 79938</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+                    </v-list>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 sm6>
+                  <v-card style="border:solid 1px #ddd">
+                    <v-toolbar color="teal" dark>
+                      <v-toolbar-side-icon></v-toolbar-side-icon>
+
+                      <v-toolbar-title>Topics</v-toolbar-title>
+
+                      <v-spacer></v-spacer>
+
+                      <v-btn icon>
+                        <v-icon>more_vert</v-icon>
+                      </v-btn>
+                    </v-toolbar>
+
+                    <v-list>
+                      <v-list-group
+                        v-for="item in items_list"
+                        v-model="item.active"
+                        :key="item.title"
+                        :prepend-icon="item.action"
+                        no-action
+                      >
+                        <v-list-tile slot="activator">
+                          <v-list-tile-content>
+                            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                          </v-list-tile-content>
+                        </v-list-tile>
+
+                        <v-list-tile
+                          v-for="subItem in item.items"
+                          :key="subItem.title"
+                        >
+                          <v-list-tile-content>
+                            <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                          </v-list-tile-content>
+
+                          <v-list-tile-action>
+                            <v-icon>{{ subItem.action }}</v-icon>
+                          </v-list-tile-action>
+                        </v-list-tile>
+                      </v-list-group>
+                    </v-list>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </div>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
+
+
 
       <v-expansion-panel-content>
         <div slot="header">テーブル</div>
@@ -349,6 +477,37 @@
               </a>
               」参照
             </div>
+            <div>
+              <v-footer
+                height="auto"
+                color="primary lighten-1"
+              >
+                <v-layout
+                  justify-center
+                  row
+                  wrap
+                >
+                  <v-btn
+                    v-for="link in links_footer"
+                    :key="link"
+                    color="white"
+                    flat
+                  >
+                    {{ link }}
+                  </v-btn>
+                  <v-flex
+                    primary
+                    lighten-2
+                    py-3
+                    text-xs-center
+                    white--text
+                    xs12
+                  >
+                    &copy;2018 — <strong>Vuetify</strong>
+                  </v-flex>
+                </v-layout>
+              </v-footer>
+            </div>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -376,13 +535,13 @@
                 <td>{{ props.item.text }}</td>
               </template>
             </v-data-table>
-            <v-container style="padding-top:20px;">
+            <v-container class="pt-3">
               <v-layout>
                 <v-flex xs6>
-                  <v-date-picker v-model="picker"></v-date-picker>
+                  <v-date-picker v-model="picker" style="border:solid 1px #ddd"></v-date-picker>
                 </v-flex>
                 <v-flex xs6>
-                  <v-time-picker v-model="e4" color="green lighten-1"></v-time-picker>
+                  <v-time-picker v-model="e4" style="border:solid 1px #ddd" color="green lighten-1"></v-time-picker>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -563,7 +722,6 @@
               」参照<br>
               画像をウィンドウよりも遅くスクロールすることで3Dエフェクトを作成する
             </div>
-
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -955,6 +1113,68 @@ import Toolbar from './index_table_data/toolbar_table'
           {
             src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
           }
+        ],
+        items_list: [
+          {
+            action: 'local_activity',
+            title: 'Attractions',
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          {
+            action: 'restaurant',
+            title: 'Dining',
+            active: true,
+            items: [
+              { title: 'Breakfast & brunch' },
+              { title: 'New American' },
+              { title: 'Sushi' }
+            ]
+          },
+          {
+            action: 'school',
+            title: 'Education',
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          {
+            action: 'directions_run',
+            title: 'Family',
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          {
+            action: 'healing',
+            title: 'Health',
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          {
+            action: 'content_cut',
+            title: 'Office',
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          {
+            action: 'local_offer',
+            title: 'Promotions',
+            items: [
+              { title: 'List Item' }
+            ]
+          }
+        ],
+        links_footer: [
+          'Home',
+          'About Us',
+          'Team',
+          'Services',
+          'Blog',
+          'Contact Us'
         ]
       }
     },

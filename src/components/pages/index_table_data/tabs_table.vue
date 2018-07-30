@@ -17,7 +17,7 @@
       </tr>
 
       <tr>
-        <td v-if="props.item.num == 1" colspan="2" style="padding:10px;">
+        <td v-if="props.item.num == 1" colspan="2" class="px-2 py-3">
           <v-tabs fixed-tabs>
             <v-tab
               v-for="n in 3"
@@ -28,7 +28,7 @@
           </v-tabs>
         </td>
 
-        <td v-else-if="props.item.num == 2" colspan="2" style="padding:10px;">
+        <td v-else-if="props.item.num == 2" colspan="2" class="px-2 py-3">
           <v-tabs right>
             <v-tab
               v-for="n in 3"
@@ -39,7 +39,7 @@
           </v-tabs>
         </td>
 
-        <td v-else-if="props.item.num == 3" colspan="2" style="padding:10px;">
+        <td v-else-if="props.item.num == 3" colspan="2" class="px-2 py-3">
           <div>
             <v-toolbar
               color="cyan"
@@ -85,7 +85,7 @@
           </div>
         </td>
 
-        <td v-else-if="props.item.num == 4" colspan="2" style="padding:10px;">
+        <td v-else-if="props.item.num == 4" colspan="2" class="px-2 py-3">
           <div>
             <v-toolbar
               color="purple"
@@ -130,7 +130,7 @@
           </div>
         </td>
         
-        <td v-else-if="props.item.num == 5" colspan="2" style="padding:10px;">
+        <td v-else-if="props.item.num == 5" colspan="2" class="px-2 py-3">
           <v-tabs
             centered
             color="cyan"
@@ -166,7 +166,7 @@
           </v-tabs>  
         </td>
 
-        <td v-else-if="props.item.num == 6" colspan="2" style="padding:10px;">
+        <td v-else-if="props.item.num == 6" colspan="2" class="px-2 py-3">
           <div>
             <v-toolbar color="cyan" dark tabs>
               <v-toolbar-side-icon></v-toolbar-side-icon>
@@ -208,7 +208,7 @@
         </td>
 
 
-        <td v-else-if="props.item.num == 7" colspan="2" style="padding:10px;">
+        <td v-else-if="props.item.num == 7" colspan="2" class="px-2 py-3">
           <div>
             <v-toolbar
               color="cyan"
@@ -259,7 +259,7 @@
           </div>
         </td>
 
-        <td v-else-if="props.item.num == 8" colspan="2" style="padding:10px;">
+        <td v-else-if="props.item.num == 8" colspan="2" class="px-2 py-3">
           <div>
             <v-toolbar
               color="cyan"

@@ -34,8 +34,8 @@
           ></v-overflow-btn>
         </td>
 
-        <td v-else-if="props.item.num == 5" style="padding:10px 25px;">
-          <v-btn-toggle v-model="toggle_exclusive" style="margin-bottom:5px">
+        <td v-else-if="props.item.num == 5" class="px-4 py-3">
+          <v-btn-toggle v-model="toggle_exclusive" class="mb-2">
             <v-btn flat><v-icon>format_align_left</v-icon></v-btn>
             <v-btn flat><v-icon>format_align_center</v-icon></v-btn>
             <v-btn flat><v-icon>format_align_right</v-icon></v-btn>
@@ -90,7 +90,8 @@
                 top
                 right
                 color="pink"
-                style = "margin:-10px 0 20px 30px"
+                class="mb-4 ml-5"
+                style = "margin-top:-12px"
               >
                 <v-icon>add</v-icon>
             </v-btn>
@@ -99,7 +100,7 @@
 
 
       <tr v-if="props.item.num == 13">
-        <td colspan="3" style="padding:10px 0;">
+        <td colspan="3" class="py-3">
           <v-toolbar dense>
             <v-overflow-btn
               :items="dropdown_font"
