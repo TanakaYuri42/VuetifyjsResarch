@@ -28,7 +28,7 @@
             >
               <div slot="header">Item</div>
               <v-card>
-                <v-card-text class="grey lighten-3">test</v-card-text>
+                <v-card-text>test</v-card-text>
               </v-card>
             </v-expansion-panel-content>
           </v-expansion-panel>

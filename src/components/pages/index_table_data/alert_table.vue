@@ -61,14 +61,14 @@
           <div class="text-xs-center">
             <v-btn
               color="primary"
-              @click="alert = !alert"
+              @click="alert2 = !alert2"
               class="mt-3"
             >
               Toggle
             </v-btn>
           </div>
           <v-alert
-            :value="alert"
+            :value="alert2"
             type="info"
             transition="scale-transition"
             class="mb-3"
@@ -131,6 +131,7 @@
           },
         ],
         alert: true,
+        alert2: true,
       }
     }
   }

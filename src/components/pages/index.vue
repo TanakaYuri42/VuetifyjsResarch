@@ -26,7 +26,7 @@
       <v-expansion-panel-content>
         <div slot="header">アイコン</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/icons" target="_blank">v-icon</a>
@@ -41,7 +41,7 @@
       <v-expansion-panel-content>
         <div slot="header">アラート</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/alerts" target="_blank">v-alert</a>
@@ -56,7 +56,7 @@
       <v-expansion-panel-content>
         <div slot="header">バッジ</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/badges" target="_blank">v-badge</a>
@@ -70,7 +70,7 @@
       <v-expansion-panel-content>
         <div slot="header">チップ</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/chips" target="_blank">v-chip</a>
@@ -85,7 +85,7 @@
       <v-expansion-panel-content>
         <div slot="header">ナビゲーション</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
 
             </div>
@@ -112,7 +112,7 @@
       <v-expansion-panel-content>
         <div slot="header">ツールバー</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/toolbars" target="_blank">
@@ -128,7 +128,7 @@
       <v-expansion-panel-content>
         <div slot="header">リスト</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/lists" target="_blank">v-list</a>
@@ -285,7 +285,7 @@
       <v-expansion-panel-content>
         <div slot="header">テーブル</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/data-tables" target="_blank">
@@ -302,7 +302,7 @@
       <v-expansion-panel-content>
         <div slot="header">イテレータ</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/data-iterator" target="_blank">
@@ -358,7 +358,7 @@
       <v-expansion-panel-content>
         <div slot="header">カード</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/cards" target="_blank">
@@ -375,7 +375,7 @@
       <v-expansion-panel-content>
         <div slot="header">パンくずリスト</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div style="padding-bottom:20px;">
               基本的な概要は「
               <a href="https://vuetifyjs.com/en/components/breadcrumbs" target="_blank">v-breadcrumbs</a>
@@ -411,7 +411,7 @@
       <v-expansion-panel-content>
         <div slot="header">ダイアログ</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/dialogs" target="_blank">v-dialog</a>
@@ -426,7 +426,7 @@
       <v-expansion-panel-content>
         <div slot="header">ジャンボトロン</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/jumbotrons" target="_blank">v-jumbotron</a>
@@ -455,7 +455,7 @@
       <v-expansion-panel-content>
         <div slot="header">ページネーション</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/paginations" target="_blank">v-pagination</a>
@@ -469,7 +469,7 @@
       <v-expansion-panel-content>
         <div slot="header">フッター</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/footer" target="_blank">
@@ -515,7 +515,7 @@
       <v-expansion-panel-content>
         <div slot="header">ピッカー</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               ユーザーが視覚的に選択できるようにする。ここではDate pickerとTime pickerを紹介する
             </div>
@@ -552,7 +552,7 @@
       <v-expansion-panel-content>
         <div slot="header">プログレスバー（丸）</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/progress" target="_blank">
@@ -568,7 +568,7 @@
       <v-expansion-panel-content>
         <div slot="header">プログレスバー（棒線）</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/progress" target="_blank">
@@ -584,7 +584,7 @@
       <v-expansion-panel-content>
         <div slot="header">タブ</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/tabs" target="_blank">
@@ -600,7 +600,7 @@
       <v-expansion-panel-content>
         <div slot="header">拡張パネル</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/expansion-panels" target="_blank">
@@ -616,7 +616,7 @@
       <v-expansion-panel-content>
         <div slot="header">アバター</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div style="padding-bottom:20px;">
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/avatars" target="_blank">
@@ -667,7 +667,7 @@
       <v-expansion-panel-content>
         <div slot="header">スナックバー</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/snackbars" target="_blank">
@@ -713,7 +713,7 @@
       <v-expansion-panel-content>
         <div slot="header">パララックス</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/parallax" target="_blank">
@@ -729,7 +729,7 @@
       <v-expansion-panel-content>
         <div slot="header">ボトムシート</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/bottom-sheets" target="_blank">
@@ -776,7 +776,7 @@
       <v-expansion-panel-content>
         <div slot="header">カルーセル</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/carousels" target="_blank">
@@ -786,7 +786,7 @@
               時間経過や操作によって画像が入れ替わる、大画面のビジュアルコンテンツ
             </div>
             <div>
-              <v-carousel>
+              <v-carousel style="height:400px">
                 <v-carousel-item
                   v-for="(item,i) in items_calousel"
                   :key="i"
@@ -801,7 +801,7 @@
       <v-expansion-panel-content>
         <div slot="header">ステッパー</div>
         <v-card>
-          <v-card-text>
+          <v-card-text class="grey lighten-3">
             <div>
               基本的な概要は「
               <a href="https://vuetifyjs.com/ja/components/steppers" target="_blank">

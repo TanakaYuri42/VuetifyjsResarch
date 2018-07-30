@@ -83,24 +83,6 @@
           </v-stepper>
         </td>
 
-
-        <td v-else-if="props.item.num == 4" colspan="2" class="pt-2 pb-2">
-          <v-stepper value="1">
-            <v-stepper-header>
-              <v-stepper-step step="1">Select campaign settings</v-stepper-step>
-
-              <v-divider></v-divider>
-
-              <v-stepper-step step="2">Create an ad group</v-stepper-step>
-
-              <v-divider></v-divider>
-
-              <v-stepper-step step="3">Create an ad</v-stepper-step>
-            </v-stepper-header>
-          </v-stepper>
-        </td>
-
-
         <td v-else-if="props.item.num == 5" colspan="2" class="pt-2 pb-2">
           <v-stepper v-model="e6" vertical>
             <v-stepper-step :complete="e6 > 1" step="1">
@@ -109,7 +91,7 @@
             </v-stepper-step>
 
             <v-stepper-content step="1">
-              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+              <v-card color="grey lighten-1" class="mb-5" height="100px"></v-card>
               <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
               <v-btn flat>Cancel</v-btn>
             </v-stepper-content>
@@ -117,7 +99,7 @@
             <v-stepper-step :complete="e6 > 2" step="2">Configure analytics for this app</v-stepper-step>
 
             <v-stepper-content step="2">
-              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+              <v-card color="grey lighten-1" class="mb-5" height="100px"></v-card>
               <v-btn color="primary" @click="e6 = 3">Continue</v-btn>
               <v-btn flat>Cancel</v-btn>
             </v-stepper-content>
@@ -125,14 +107,14 @@
             <v-stepper-step :complete="e6 > 3" step="3">Select an ad format and name ad unit</v-stepper-step>
 
             <v-stepper-content step="3">
-              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+              <v-card color="grey lighten-1" class="mb-5" height="100px"></v-card>
               <v-btn color="primary" @click="e6 = 4">Continue</v-btn>
               <v-btn flat>Cancel</v-btn>
             </v-stepper-content>
 
             <v-stepper-step step="4">View setup instructions</v-stepper-step>
             <v-stepper-content step="4">
-              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+              <v-card color="grey lighten-1" class="mb-5" height="100px"></v-card>
               <v-btn color="primary" @click="e6 = 1">Continue</v-btn>
               <v-btn flat>Cancel</v-btn>
             </v-stepper-content>
@@ -381,7 +363,7 @@
                   <v-card
                     class="mb-5"
                     color="grey lighten-1"
-                    height="200px"
+                    height="100px"
                   ></v-card>
 
                   <v-btn
@@ -431,13 +413,6 @@
             url: "https://vuetifyjs.com/ja/components/steppers#example-optional",
             num: 3
           },  
-          {
-            value: false,
-            name: '水平ステップ',
-            text: "定義されたステップを経て、x軸に沿って進行する",
-            url: "https://vuetifyjs.com/ja/components/steppers#example-horizontal",
-            num: 4,
-          }, 
           {
             value: false,
             name: '垂直ステップ',
